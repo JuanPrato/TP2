@@ -2,11 +2,11 @@
 
 
 
-# TP2 Algoritmos 3: {nombre}
+# TP2 Algoritmos 3: 
 
 Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUBA
 
-## Grupo {N}
+## Grupo {N15}
 
 * **Juan Manuel Prato** - [github](https://github.com/JuanPrato)
 * **Integrante 2** - [integrante2](https://github.com/integrante2)
