@@ -8,6 +8,7 @@ public class LapizLevantado implements Lapiz {
     }
 
     @Override
-    public void dibujar(){};
+    public void dibujar() {
+    };
 
 }

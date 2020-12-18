@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.lapiz.impl;
+package edu.fiuba.algo3.modelo.lapiz;
 
 import edu.fiuba.algo3.modelo.lapiz.impl.LapizLevantado;
 import org.junit.jupiter.api.Assertions;
