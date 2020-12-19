@@ -1,23 +1,37 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.lapiz.Lapiz;
+import edu.fiuba.algo3.modelo.lapiz.ILapiz;
 import edu.fiuba.algo3.modelo.lapiz.impl.LapizLevantado;
 
 public class Personaje {
 
-    Lapiz lapiz = new LapizLevantado();
+    Posicion posicion = new Posicion();
+
+    ILapiz ILapiz = new LapizLevantado();
 
     Personaje() {}
 
-    Personaje(Lapiz lapiz) {
-        this.lapiz = lapiz;
+    Personaje(ILapiz ILapiz) {
+        this.ILapiz = ILapiz;
     }
 
-    public Lapiz getLapiz() {
-        return lapiz;
+    public ILapiz getLapiz() {
+        return ILapiz;
     }
 
-    public void setLapiz(Lapiz lapiz) {
-        this.lapiz = lapiz;
+    public void setLapiz(ILapiz ILapiz) {
+        this.ILapiz = ILapiz;
+    }
+
+    public Posicion getPosicion() {
+        return posicion;
+    }
+
+    public void setPosicion(Posicion posicion) {
+        this.posicion = posicion;
+    }
+
+    public void mover(int desplazamientoX, int desplazamientoY){
+        posicion.mover(desplazamientoX,desplazamientoY);
     }
 }
