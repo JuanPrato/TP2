@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.lapiz;
 
-public interface Lapiz {
+public interface ILapiz {
 
     void dibujar();
 
