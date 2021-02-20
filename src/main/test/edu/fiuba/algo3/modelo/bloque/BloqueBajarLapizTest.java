@@ -1,8 +1,7 @@
-package edu.fiuba.algo3.modelo.bloque.impl;
+package edu.fiuba.algo3.modelo.bloque;
 
 import edu.fiuba.algo3.modelo.lapiz.ILapiz;
-import edu.fiuba.algo3.modelo.lapiz.impl.LapizAbajo;
-import edu.fiuba.algo3.modelo.lapiz.impl.LapizLevantado;
+import edu.fiuba.algo3.modelo.lapiz.LapizAbajo;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

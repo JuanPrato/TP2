@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.lapiz.ILapiz;
-import edu.fiuba.algo3.modelo.lapiz.impl.LapizLevantado;
+import edu.fiuba.algo3.modelo.lapiz.LapizLevantado;
 
 public class Personaje {
 

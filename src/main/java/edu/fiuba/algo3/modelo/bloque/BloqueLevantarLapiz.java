@@ -1,7 +1,6 @@
-package edu.fiuba.algo3.modelo.bloque.impl;
+package edu.fiuba.algo3.modelo.bloque;
 
-import edu.fiuba.algo3.modelo.bloque.IBloque;
-import edu.fiuba.algo3.modelo.lapiz.impl.LapizLevantado;
+import edu.fiuba.algo3.modelo.lapiz.LapizLevantado;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 
 public class BloqueLevantarLapiz implements IBloque {

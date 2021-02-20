@@ -1,6 +1,4 @@
-package edu.fiuba.algo3.modelo.lapiz.impl;
-
-import edu.fiuba.algo3.modelo.lapiz.ILapiz;
+package edu.fiuba.algo3.modelo.lapiz;
 
 public class LapizAbajo implements ILapiz {
     

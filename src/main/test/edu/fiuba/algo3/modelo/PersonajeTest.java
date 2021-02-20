@@ -1,12 +1,12 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.bloque.IBloque;
-import edu.fiuba.algo3.modelo.bloque.impl.BloqueBajarLapiz;
-import edu.fiuba.algo3.modelo.bloque.impl.BloqueLevantarLapiz;
-import edu.fiuba.algo3.modelo.bloque.impl.BloqueMovimiento;
-import edu.fiuba.algo3.modelo.lapiz.impl.LapizAbajo;
+import edu.fiuba.algo3.modelo.bloque.BloqueBajarLapiz;
+import edu.fiuba.algo3.modelo.bloque.BloqueLevantarLapiz;
+import edu.fiuba.algo3.modelo.bloque.BloqueMovimiento;
+import edu.fiuba.algo3.modelo.lapiz.LapizAbajo;
 import edu.fiuba.algo3.modelo.sector.*;
-import edu.fiuba.algo3.modelo.lapiz.impl.LapizLevantado;
+import edu.fiuba.algo3.modelo.lapiz.LapizLevantado;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
