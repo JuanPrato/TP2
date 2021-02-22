@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.bloque;
 
-import edu.fiuba.algo3.modelo.bloque.BloqueMovimiento;
+import edu.fiuba.algo3.modelo.direccion.Direccion;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,34 +9,31 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 
-import java.util.List;
 
 public class BloqueMovimientoTest {
 
     private BloqueMovimiento bloqueMovimiento;
 
     @Mock
-    private SectorDibujo sectorDibujo = Mockito.mock(SectorDibujo.class);
+    private final SectorDibujo sectorDibujo = Mockito.mock(SectorDibujo.class);
 
     @BeforeEach
     void setUp() {
-        bloqueMovimiento = new BloqueMovimiento(1, 1);
+        bloqueMovimiento = new BloqueMovimiento(Direccion.abajo());
     }
 
     @Test
-    void mePideDesplazarLaCantidadQueSeLeAsigna() {
+    void testElBloqueMovientoDeberiaDeplazarEnLaDireccionCorrecta() {
 
-        ArgumentCaptor<Integer> posicionCaptor = ArgumentCaptor.forClass(Integer.class);
+        ArgumentCaptor<Direccion> posicionCaptor = ArgumentCaptor.forClass(Direccion.class);
 
-        Mockito.doNothing().when(sectorDibujo).actualizarPosicionPersonaje(posicionCaptor.capture(), posicionCaptor.capture());
+        Mockito.doNothing().when(sectorDibujo).actualizarPosicionPersonaje(posicionCaptor.capture());
 
         bloqueMovimiento.accion(sectorDibujo);
 
-        List<Integer> posicion = posicionCaptor.getAllValues();
+        Direccion direccion = posicionCaptor.getValue();
 
-        Assertions.assertEquals(1, posicion.get(0));
-
-        Assertions.assertEquals(1, posicion.get(1));
+        Assertions.assertEquals(Direccion.abajo(), direccion);
 
     }
 

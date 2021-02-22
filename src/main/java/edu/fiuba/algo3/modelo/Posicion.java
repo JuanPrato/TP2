@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.direccion.Direccion;
+
 public class Posicion {
 
     private int posicionX;
@@ -31,11 +33,6 @@ public class Posicion {
 
     public void setPosicionY(int posicionY) {
         this.posicionY = posicionY;
-    }
-
-    public void mover(int plusX, int plusY){
-        posicionX += plusX;
-        posicionY += plusY;
     }
 
 }

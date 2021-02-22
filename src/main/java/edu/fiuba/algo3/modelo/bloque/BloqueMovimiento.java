@@ -1,22 +1,21 @@
 package edu.fiuba.algo3.modelo.bloque;
 
+import edu.fiuba.algo3.modelo.direccion.Direccion;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 
 public class BloqueMovimiento implements IBloque {
 
-    private int desplazamientoX;
-    private int desplazamientoY;
+    Direccion direccion;
 
     public BloqueMovimiento() {
     }
 
-    public BloqueMovimiento(int desplazamientoX, int desplazamientoY) {
-        this.desplazamientoX = desplazamientoX;
-        this.desplazamientoY = desplazamientoY;
+    public BloqueMovimiento(Direccion direccion) {
+        this.direccion = direccion;
     }
 
     @Override
     public void accion(SectorDibujo sector) {
-        sector.actualizarPosicionPersonaje(desplazamientoX,desplazamientoY);
+        sector.actualizarPosicionPersonaje(direccion);
     }
 }

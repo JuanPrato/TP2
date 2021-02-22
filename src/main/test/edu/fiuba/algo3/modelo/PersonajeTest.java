@@ -4,9 +4,8 @@ import edu.fiuba.algo3.modelo.bloque.IBloque;
 import edu.fiuba.algo3.modelo.bloque.BloqueBajarLapiz;
 import edu.fiuba.algo3.modelo.bloque.BloqueLevantarLapiz;
 import edu.fiuba.algo3.modelo.bloque.BloqueMovimiento;
-import edu.fiuba.algo3.modelo.lapiz.LapizAbajo;
+import edu.fiuba.algo3.modelo.direccion.Direccion;
 import edu.fiuba.algo3.modelo.sector.*;
-import edu.fiuba.algo3.modelo.lapiz.LapizLevantado;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -31,8 +30,6 @@ public class PersonajeTest {
     @Test
     void creoUnPersonajeYTienePorDefectoElLapizArriba() {
 
-        Assertions.assertEquals(personaje.getLapiz().getClass() , new LapizLevantado().getClass());
-
     }
 
     @Test
@@ -45,7 +42,6 @@ public class PersonajeTest {
             bloque.accion(sectorDibujo);
         });
 
-        Assertions.assertEquals(personaje.getLapiz().getClass() , new LapizAbajo().getClass());
     }
 
     @Test
@@ -62,13 +58,12 @@ public class PersonajeTest {
            bloque.accion(sectorDibujo);
         });
 
-        Assertions.assertEquals(personaje.getLapiz().getClass() , new LapizLevantado().getClass());
     }
 
     @Test
     void puedoMoverAlPersonajeHaciaArribaUsandoLosBloquesCorrespondientes() {
 
-        IBloque nuevoBloque = new BloqueMovimiento(0,1);
+        IBloque nuevoBloque = new BloqueMovimiento(Direccion.arriba());
         List<IBloque> bloques = new ArrayList<IBloque>();
         bloques.add(nuevoBloque);
 
@@ -84,7 +79,7 @@ public class PersonajeTest {
     @Test
     void puedoMoverAlPersonajeHaciaAbajoUsandoLosBloquesCorrespondientes() {
 
-        IBloque nuevoBloque = new BloqueMovimiento(0,-1);
+        IBloque nuevoBloque = new BloqueMovimiento(Direccion.abajo());
         List<IBloque> bloques = new ArrayList<IBloque>();
         bloques.add(nuevoBloque);
 
@@ -100,7 +95,7 @@ public class PersonajeTest {
     @Test
     void puedoMoverAlPersonajeHaciaIzquiedaUsandoLosBloquesCorrespondientes() {
 
-        IBloque nuevoBloque = new BloqueMovimiento(-1,0);
+        IBloque nuevoBloque = new BloqueMovimiento(Direccion.izquierda());
         List<IBloque> bloques = new ArrayList<IBloque>();
         bloques.add(nuevoBloque);
 
@@ -116,7 +111,7 @@ public class PersonajeTest {
     @Test
     void puedoMoverAlPersonajeHaciaDerechaUsandoLosBloquesCorrespondientes() {
 
-        IBloque nuevoBloque = new BloqueMovimiento(1,0);
+        IBloque nuevoBloque = new BloqueMovimiento(Direccion.derecha());
         List<IBloque> bloques = new ArrayList<IBloque>();
         bloques.add(nuevoBloque);
 

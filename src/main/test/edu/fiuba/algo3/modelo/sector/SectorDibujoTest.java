@@ -23,29 +23,11 @@ public class SectorDibujoTest {
     @Test
     void puedoActualizarLaPosicionDelPersonajeCorrectamenteX(){
 
-        ArgumentCaptor<Integer> posicionCaptor = ArgumentCaptor.forClass(Integer.class);
-
-        Mockito.doNothing().when(personaje).mover(posicionCaptor.capture(), posicionCaptor.capture());
-
-        sector.actualizarPosicionPersonaje(1,0);
-
-        int posicionDesplazadaEnX = posicionCaptor.getAllValues().get(0);
-
-        Assertions.assertEquals(1, posicionDesplazadaEnX);
     }
 
     @Test
     void puedoActualizarLaPosicionDelPersonajeCorrectamenteY(){
 
-        ArgumentCaptor<Integer> posicionCaptor = ArgumentCaptor.forClass(Integer.class);
-
-        Mockito.doNothing().when(personaje).mover(posicionCaptor.capture(), posicionCaptor.capture());
-
-        sector.actualizarPosicionPersonaje(0,1);
-
-        int posicionDesplazadaEnY = posicionCaptor.getAllValues().get(1);
-
-        Assertions.assertEquals(1, posicionDesplazadaEnY);
     }
 
 }

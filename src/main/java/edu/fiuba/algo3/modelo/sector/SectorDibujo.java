@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo.sector;
 
 import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.direccion.Direccion;
 import edu.fiuba.algo3.modelo.lapiz.ILapiz;
 
 public class SectorDibujo {
@@ -22,11 +23,13 @@ public class SectorDibujo {
         this.personaje = personaje;
     }
 
-    public void actualizarLapizPersonaje(ILapiz ILapiz){
-        personaje.setLapiz(ILapiz);
+    public void bajarLapizDelPersonaje(){
+        personaje.bajarLapiz();
     }
 
-    public void actualizarPosicionPersonaje(int desplazamientoX, int desplazamientoY) {
-        personaje.mover(desplazamientoX, desplazamientoY);
+    public void subirLapizDelPersonaje(){personaje.subirLapiz();}
+
+    public void actualizarPosicionPersonaje(Direccion direccion) {
+        personaje.mover(direccion);
     }
 }
