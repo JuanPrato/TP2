@@ -38,4 +38,7 @@ public class Posicion {
         posicionY += plusY;
     }
 
+    public Posicion moverHasta(Direccion direccion){
+        return new Posicion();
+    }
 }

@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo.bloque;
 
+import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.bloque.BloqueMovimiento;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import org.junit.jupiter.api.Assertions;
@@ -16,7 +17,7 @@ public class BloqueMovimientoTest {
     private BloqueMovimiento bloqueMovimiento;
 
     @Mock
-    private SectorDibujo sectorDibujo = Mockito.mock(SectorDibujo.class);
+    private Personaje personaje = Mockito.mock(Personaje.class);
 
     @BeforeEach
     void setUp() {
@@ -28,9 +29,9 @@ public class BloqueMovimientoTest {
 
         ArgumentCaptor<Integer> posicionCaptor = ArgumentCaptor.forClass(Integer.class);
 
-        Mockito.doNothing().when(sectorDibujo).actualizarPosicionPersonaje(posicionCaptor.capture(), posicionCaptor.capture());
+        Mockito.doNothing().when(personaje).mover(posicionCaptor.capture(), posicionCaptor.capture());
 
-        bloqueMovimiento.accion(sectorDibujo);
+        bloqueMovimiento.accion(personaje);
 
         List<Integer> posicion = posicionCaptor.getAllValues();
 

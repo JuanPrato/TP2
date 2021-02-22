@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.modelo.lapiz;
 
-public class LapizAbajo implements ILapiz {
+public class EstadoLapizAbajo implements IEstadoLapiz {
     
-    public LapizAbajo() {
+    public EstadoLapizAbajo() {
     }
 
     @Override

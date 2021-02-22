@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.modelo.bloque;
 
-import edu.fiuba.algo3.modelo.lapiz.LapizLevantado;
-import edu.fiuba.algo3.modelo.sector.SectorDibujo;
+import edu.fiuba.algo3.modelo.Personaje;
 
 public class BloqueLevantarLapiz implements IBloque {
 
@@ -9,8 +8,8 @@ public class BloqueLevantarLapiz implements IBloque {
     }
 
     @Override
-    public void accion(SectorDibujo sectorDibujo){
-        sectorDibujo.actualizarLapizPersonaje(new LapizLevantado());
+    public void accion(Personaje personaje){
+        personaje.levantarLapiz();
     }
 
 }

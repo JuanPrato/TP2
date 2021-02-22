@@ -6,7 +6,7 @@ public class LapizLevantadoTest {
 
     @Test
     void lapizLevantadoEntiendeDibujar() {
-        LapizLevantado lapizLevantado = new LapizLevantado();
+        EstadoLapizLevantado lapizLevantado = new EstadoLapizLevantado();
 
         lapizLevantado.dibujar();
     }

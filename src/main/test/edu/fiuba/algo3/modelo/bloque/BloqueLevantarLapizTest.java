@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.modelo.bloque;
 
-import edu.fiuba.algo3.modelo.bloque.BloqueLevantarLapiz;
-import edu.fiuba.algo3.modelo.lapiz.ILapiz;
-import edu.fiuba.algo3.modelo.lapiz.LapizLevantado;
+import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.lapiz.IEstadoLapiz;
+import edu.fiuba.algo3.modelo.lapiz.EstadoLapizLevantado;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -12,25 +12,24 @@ import org.mockito.Mockito;
 
 public class BloqueLevantarLapizTest {
 
-
     private BloqueLevantarLapiz bloqueLevantarLapiz = new BloqueLevantarLapiz();
 
     @Mock
-    private SectorDibujo sectorDibujo = Mockito.mock(SectorDibujo.class);
+    private Personaje personaje = Mockito.mock(Personaje.class);
 
 
     @Test
     void alRealizarLaAccionIntentaCambiarElLapizPorUnoAbajo() {
 
-        ArgumentCaptor<ILapiz> lapizCaptor = ArgumentCaptor.forClass(LapizLevantado.class);
+        ArgumentCaptor<IEstadoLapiz> lapizCaptor = ArgumentCaptor.forClass(EstadoLapizLevantado.class);
 
-        Mockito.doNothing().when(sectorDibujo).actualizarLapizPersonaje(lapizCaptor.capture());
+        Mockito.doNothing().when(personaje).levantarLapiz();
 
-        bloqueLevantarLapiz.accion(sectorDibujo);
+        bloqueLevantarLapiz.accion(personaje);
 
-        ILapiz lapiz = lapizCaptor.getValue();
+        IEstadoLapiz lapiz = lapizCaptor.getValue();
 
-        Assertions.assertEquals(LapizLevantado.class,lapiz.getClass());
+        Assertions.assertEquals(EstadoLapizLevantado.class,lapiz.getClass());
 
     }
 

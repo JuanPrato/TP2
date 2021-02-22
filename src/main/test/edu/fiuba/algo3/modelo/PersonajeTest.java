@@ -4,9 +4,9 @@ import edu.fiuba.algo3.modelo.bloque.IBloque;
 import edu.fiuba.algo3.modelo.bloque.BloqueBajarLapiz;
 import edu.fiuba.algo3.modelo.bloque.BloqueLevantarLapiz;
 import edu.fiuba.algo3.modelo.bloque.BloqueMovimiento;
-import edu.fiuba.algo3.modelo.lapiz.LapizAbajo;
+import edu.fiuba.algo3.modelo.lapiz.EstadoLapizAbajo;
 import edu.fiuba.algo3.modelo.sector.*;
-import edu.fiuba.algo3.modelo.lapiz.LapizLevantado;
+import edu.fiuba.algo3.modelo.lapiz.EstadoLapizLevantado;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -31,7 +31,7 @@ public class PersonajeTest {
     @Test
     void creoUnPersonajeYTienePorDefectoElLapizArriba() {
 
-        Assertions.assertEquals(personaje.getLapiz().getClass() , new LapizLevantado().getClass());
+        Assertions.assertEquals(personaje.getLapiz().getClass() , new EstadoLapizLevantado().getClass());
 
     }
 
@@ -42,27 +42,27 @@ public class PersonajeTest {
         bloques.add(bloqueBajarLapiz);
 
         bloques.forEach(bloque -> {
-            bloque.accion(sectorDibujo);
+            bloque.accion(personaje);
         });
 
-        Assertions.assertEquals(personaje.getLapiz().getClass() , new LapizAbajo().getClass());
+        Assertions.assertEquals(personaje.getLapiz().getClass() , new EstadoLapizAbajo().getClass());
     }
 
     @Test
     void puedoLevantarElLapizDespuesDeBajarloUsandoLosBloquesCorrespondientes() {
 
         IBloque bloqueBajarLapiz = new BloqueBajarLapiz();
-        bloqueBajarLapiz.accion(sectorDibujo);
+        bloqueBajarLapiz.accion(personaje);
 
         IBloque bloqueLevantarLapiz = new BloqueLevantarLapiz();
         List<IBloque> bloques = new ArrayList<IBloque>();
         bloques.add(bloqueLevantarLapiz);
 
         bloques.forEach(bloque -> {
-           bloque.accion(sectorDibujo);
+           bloque.accion(personaje);
         });
 
-        Assertions.assertEquals(personaje.getLapiz().getClass() , new LapizLevantado().getClass());
+        Assertions.assertEquals(personaje.getLapiz().getClass() , new EstadoLapizLevantado().getClass());
     }
 
     @Test
@@ -75,7 +75,7 @@ public class PersonajeTest {
         int posicionInicialEnY = personaje.getPosicion().getPosicionY();
 
         bloques.forEach(bloque -> {
-            bloque.accion(sectorDibujo);
+            bloque.accion(personaje);
         });
 
         Assertions.assertEquals(posicionInicialEnY + 1, personaje.getPosicion().getPosicionY());
@@ -91,7 +91,7 @@ public class PersonajeTest {
         int posicionInicialEnY = personaje.getPosicion().getPosicionY();
 
         bloques.forEach(bloque -> {
-            bloque.accion(sectorDibujo);
+            bloque.accion(personaje);
         });
 
         Assertions.assertEquals(posicionInicialEnY - 1, personaje.getPosicion().getPosicionY());
@@ -107,7 +107,7 @@ public class PersonajeTest {
         int posicionInicialEnY = personaje.getPosicion().getPosicionY();
 
         bloques.forEach(bloque -> {
-            bloque.accion(sectorDibujo);
+            bloque.accion(personaje);
         });
 
         Assertions.assertEquals(posicionInicialEnY - 1, personaje.getPosicion().getPosicionX());
@@ -123,7 +123,7 @@ public class PersonajeTest {
         int posicionInicialEnY = personaje.getPosicion().getPosicionY();
 
         bloques.forEach(bloque -> {
-            bloque.accion(sectorDibujo);
+            bloque.accion(personaje);
         });
 
         Assertions.assertEquals(posicionInicialEnY + 1, personaje.getPosicion().getPosicionX());
