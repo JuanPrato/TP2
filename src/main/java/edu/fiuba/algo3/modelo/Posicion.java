@@ -1,7 +1,5 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.direccion.Direccion;
-
 public class Posicion {
 
     private int posicionX;
@@ -33,6 +31,21 @@ public class Posicion {
 
     public void setPosicionY(int posicionY) {
         this.posicionY = posicionY;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this){
+            return true;
+        }
+
+        if (!(o instanceof Posicion)){
+            return false;
+        }
+
+        Posicion p = (Posicion) o;
+
+        return this.posicionX == p.getPosicionX() && this.posicionY == p.getPosicionY();
     }
 
 }

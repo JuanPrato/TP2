@@ -9,7 +9,7 @@ public class BloqueLevantarLapiz implements IBloque {
 
     @Override
     public void accion(SectorDibujo sectorDibujo){
-        sectorDibujo.actualizarLapizPersonaje(new LapizLevantado());
+        sectorDibujo.subirLapizDelPersonaje();
     }
 
 }
