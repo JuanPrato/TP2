@@ -6,4 +6,5 @@ public interface IBloque {
 
     void accion(SectorDibujo sector);
 
+    void invertir();
 }
