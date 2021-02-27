@@ -39,8 +39,9 @@ public class Direccion {
     }
 
     public Posicion proximaPosicion(Posicion posicion) {
-        int nextX = posicion.getPosicionX() + this.valueX;
-        int nextY = posicion.getPosicionY() + this.valueY;
+        // * 10 seria el espacio que ocuparia en pantalla la linea
+        int nextX = posicion.getPosicionX() + this.valueX * 10;
+        int nextY = posicion.getPosicionY() + this.valueY * 10;
 
         return new Posicion(nextX, nextY);
     }

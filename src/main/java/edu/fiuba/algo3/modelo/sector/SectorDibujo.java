@@ -1,10 +1,14 @@
 package edu.fiuba.algo3.modelo.sector;
 
 import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.direccion.Direccion;
+import edu.fiuba.algo3.modelo.Tablero;
+import edu.fiuba.algo3.modelo.linea.Linea;
 
 public class SectorDibujo {
 
+    private Tablero tablero = new Tablero();
     private Personaje personaje;
 
     public SectorDibujo() {
@@ -26,9 +30,16 @@ public class SectorDibujo {
         personaje.bajarLapiz();
     }
 
-    public void subirLapizDelPersonaje(){personaje.subirLapiz();}
+    public void subirLapizDelPersonaje() {personaje.subirLapiz();}
 
     public void actualizarPosicionPersonaje(Direccion direccion) {
-        personaje.mover(direccion);
+        Linea linea = personaje.moverYDibujar(direccion);
+        tablero.actualizar(linea);
     }
+
+    public void limpiarTablero(){
+        tablero = new Tablero();
+        personaje.setPosicion(new Posicion());
+    }
+
 }

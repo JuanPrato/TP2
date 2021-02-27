@@ -3,36 +3,26 @@ package edu.fiuba.algo3.modelo.lapiz;
 import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.linea.Linea;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Lapiz implements ILapiz{
 
-    private IEstadoLapiz estado;
-    private final List<Linea> lineas;
-
+    private IEstrategiaLapiz estrategia;
 
     public Lapiz(){
-        estado = new Levantado();
-        lineas = new ArrayList<>();
-    }
-
-    public List<Linea> getLineas() {
-        return lineas;
+        estrategia = new Levantado();
     }
 
     @Override
     public void bajarLapiz() {
-        this.estado = new Abajo();
+        this.estrategia = new Abajo();
     }
 
     @Override
     public void levantarLapiz() {
-        this.estado = new Levantado();
+        this.estrategia = new Levantado();
     }
 
     @Override
-    public void dibujar(Posicion posicionInicial, Posicion posicionFinal) {
-        lineas.add(estado.realizarLinea(posicionInicial, posicionFinal));
+    public Linea dibujar(Posicion posicionInicial, Posicion posicionFinal) {
+        return estrategia.realizarLinea(posicionInicial, posicionFinal);
     }
 }

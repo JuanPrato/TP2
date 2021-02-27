@@ -7,13 +7,14 @@ import edu.fiuba.algo3.modelo.bloque.IBloque;
 
 
 public class SectorAlgoritmo extends BloqueAcoplado {
-    Personaje personaje;
+    private SectorDibujo sectorDibujo;
+    private SectorBloque sectorBloque;
 
-    public SectorAlgoritmo(Personaje unPersonaje) {
-        this.personaje = unPersonaje;
+    public SectorAlgoritmo(SectorDibujo unSectorDibujo) {
+        this.sectorDibujo = unSectorDibujo;
     }
 
-    public void ejecutarAlgoritmo( Personaje personaje ) {
-        /* Se pasa el personaje a cada bloque */
+    public void ejecutarAlgoritmo() {
+        sectorBloque.ejecutarSecuenciaBLoques( sectorDibujo );
     }
 }
