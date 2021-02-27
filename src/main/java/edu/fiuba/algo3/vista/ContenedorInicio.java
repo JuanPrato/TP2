@@ -25,7 +25,7 @@ public class ContenedorInicio extends VBox {
 
         Text titulo = new Text("AlgoBlocks");
         titulo.setFont(Font.font("Calibri", FontWeight.BOLD,40));
-        titulo.setFill(Color.web("00adbc"));
+        titulo.setFill(Color.web("7665a0"));
 
         VBox botoneraInicio = new VBox();
 
