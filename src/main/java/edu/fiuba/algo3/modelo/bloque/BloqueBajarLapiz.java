@@ -3,22 +3,18 @@ package edu.fiuba.algo3.modelo.bloque;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 
 public class BloqueBajarLapiz implements IBloque {
-    private boolean inversa = false;
+    private UsarLapiz usoLapiz = new BajarLapiz();
 
     public BloqueBajarLapiz() {
     }
 
     @Override
     public void accion(SectorDibujo sectorDibujo) {
-        if ( inversa ) {
-            sectorDibujo.subirLapizDelPersonaje();
-        } else {
-            sectorDibujo.bajarLapizDelPersonaje();
-        }
+        usoLapiz.usar(sectorDibujo);
     }
 
     @Override
     public void invertir() {
-        this.inversa = true;
+        usoLapiz = usoLapiz.inversa();
     }
 }
