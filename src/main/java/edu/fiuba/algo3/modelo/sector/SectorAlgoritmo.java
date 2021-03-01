@@ -16,7 +16,7 @@ import java.util.List;
 public class SectorAlgoritmo extends BloqueAcoplado {
     private final SectorDibujo sectorDibujo;
     private SectorBloque sectorBloque;
-    private final List<IBloque> bloques;
+    private List<IBloque> bloques;
 
     public SectorAlgoritmo() {
         this.bloques = new ArrayList<IBloque>();
@@ -40,6 +40,11 @@ public class SectorAlgoritmo extends BloqueAcoplado {
         this.bloques.forEach(bloque -> {
             bloque.accion(sectorDibujo);
         });
+    }
+
+    public void reiniciarJuego() {
+        sectorDibujo.limpiarTablero();
+        this.bloques = new ArrayList<IBloque>();
     }
 
     public SectorDibujo getSectorDibujo(){

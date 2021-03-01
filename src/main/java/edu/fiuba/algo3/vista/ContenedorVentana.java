@@ -2,15 +2,16 @@ package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.Tablero;
 import edu.fiuba.algo3.modelo.sector.SectorAlgoritmo;
+import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
 public class ContenedorVentana extends HBox {
     private Stage stage;
-    private Tablero tablero;
 
     public ContenedorVentana(Stage stage, SectorAlgoritmo sectorAlgoritmo) {
         super();
