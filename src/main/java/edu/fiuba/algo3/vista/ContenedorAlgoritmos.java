@@ -25,7 +25,7 @@ public class ContenedorAlgoritmos extends VBox {
         this.stage = stage;
         this.setAlignment(Pos.BOTTOM_RIGHT);
         this.setPadding(new Insets(400,400,400,400));
-        this.setBackground(new Background(new BackgroundFill(Color.web("f5f1ff"), CornerRadii.EMPTY, Insets.EMPTY)));
+        this.setBackground(new Background(new BackgroundFill(Color.web("#00f"), CornerRadii.EMPTY, Insets.EMPTY)));
         this.setSpacing(20);
 
         Text titulo = new Text("Espacio de trabajo");
@@ -37,6 +37,8 @@ public class ContenedorAlgoritmos extends VBox {
         Button botonRemover = new BotonRemover("Remover", 140, 70, 160, 70, Color.web("7665a0"), Color.web("645880"));
         //botonRemover.setOnAction(new BotonRemoverEventHandler());
         botonRemover.setDefaultButton(true);
+        botonRemover.setLayoutX(0);
+        botonRemover.setLayoutY(0);
 
         this.getChildren().addAll(botonRemover, titulo);
         this.getChildren().addAll(bloques);

@@ -29,7 +29,11 @@ public class PersonajeTest {
     }
 
     @Test
-    void creoUnPersonajeYTienePorDefectoElLapizArriba() {
+    void creoUnPersonajeDeberiaTenerPorDefectoElLapizArriba() {
+
+        Linea linea = personaje.moverYDibujar(Direccion.derecha());
+
+        Assertions.assertFalse(linea.colocar());
 
     }
 

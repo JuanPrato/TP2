@@ -1,11 +1,9 @@
 package edu.fiuba.algo3.controlador;
 
-import edu.fiuba.algo3.modelo.Tablero;
 import edu.fiuba.algo3.modelo.bloque.BloqueMovimiento;
-import edu.fiuba.algo3.modelo.bloque.IBloque;
 import edu.fiuba.algo3.modelo.direccion.Direccion;
 import edu.fiuba.algo3.modelo.sector.SectorAlgoritmo;
-import edu.fiuba.algo3.vista.ContenedorTablero;
+import edu.fiuba.algo3.vista.ContenedorVentana;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -26,6 +24,6 @@ public class BotonBloqueDireccionEventHandler implements EventHandler<ActionEven
     @Override
     public void handle(ActionEvent actionEvent) {
         sectorAlgoritmo.addBloque(new BloqueMovimiento(direccion));
-        stage.setScene( new Scene(new ContenedorTablero(stage, sectorAlgoritmo), 1700,800));
+        stage.setScene( new Scene(new ContenedorVentana(stage, sectorAlgoritmo), 1700,800));
     }
 }
