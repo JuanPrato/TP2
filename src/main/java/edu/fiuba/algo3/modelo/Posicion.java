@@ -18,7 +18,7 @@ public class Posicion {
     }
 
     public int getPosicionX() {
-        return posicionX;
+        return Math.abs(posicionX) == 110 ? (int)Math.signum(posicionX) * 100 : posicionX;
     }
 
     public void setPosicionX(int posicionX) {
@@ -26,7 +26,7 @@ public class Posicion {
     }
 
     public int getPosicionY() {
-        return posicionY;
+        return Math.abs(posicionY) == 110 ? (int)Math.signum(posicionY) * 100 : posicionY;
     }
 
     public void setPosicionY(int posicionY) {

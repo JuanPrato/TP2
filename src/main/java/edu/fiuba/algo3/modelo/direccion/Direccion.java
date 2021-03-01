@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo.direccion;
 
 import edu.fiuba.algo3.modelo.Posicion;
+import javafx.geometry.Pos;
 
 public class Direccion {
 
@@ -9,9 +10,10 @@ public class Direccion {
     private static Direccion derecha;
     private static Direccion izquierda;
 
+
     static {
-        arriba = new Direccion(0, 1);
-        abajo = new Direccion(0, -1);
+        arriba = new Direccion(0, -1);
+        abajo = new Direccion(0, 1);
         derecha = new Direccion(1, 0);
         izquierda = new Direccion(-1, 0);
 
@@ -19,6 +21,7 @@ public class Direccion {
         abajo.setInversa(arriba);
         derecha.setInversa(izquierda);
         izquierda.setInversa(derecha);
+
     }
 
     private Direccion inversa;
