@@ -2,10 +2,8 @@ package edu.fiuba.algo3.modelo.linea;
 
 import edu.fiuba.algo3.modelo.Posicion;
 
-public class Linea {
-
+public abstract class Linea {
     private Posicion posicionInicial;
-
     private Posicion posicionFinal;
 
     public Linea(Posicion posicionInicial, Posicion posicionFinal){
@@ -25,7 +23,13 @@ public class Linea {
         return posicionFinal;
     }
 
-    public void dibujarse(){
-
+    public void alargar(int valor){
+        posicionFinal = new Posicion(posicionFinal.getPosicionX()*valor, posicionFinal.getPosicionY()*valor );
     }
+
+    public void achicar(int valor){
+        posicionFinal = new Posicion(posicionFinal.getPosicionX()/valor, posicionFinal.getPosicionY()/valor );
+    }
+
+    public abstract boolean colocar();
 }

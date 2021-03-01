@@ -18,4 +18,9 @@ public class BloqueMovimiento implements IBloque {
     public void accion(SectorDibujo sector) {
         sector.actualizarPosicionPersonaje(direccion);
     }
+
+    @Override
+    public void invertir() {
+        this.direccion = direccion.inversa();
+    }
 }

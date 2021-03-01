@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.direccion.Direccion;
 import edu.fiuba.algo3.modelo.lapiz.Lapiz;
+import edu.fiuba.algo3.modelo.linea.Linea;
 
 public class Personaje {
 
@@ -23,8 +24,11 @@ public class Personaje {
         this.posicion = posicion;
     }
 
-    public void mover(Direccion direccion){
+    public Linea moverYDibujar(Direccion direccion){
+        Posicion posicionAnterior = this.posicion;
         this.posicion = direccion.proximaPosicion(this.posicion);
+
+        return lapiz.dibujar(posicionAnterior, this.posicion);
     }
 
     public void subirLapiz(){
