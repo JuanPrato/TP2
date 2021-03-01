@@ -29,6 +29,6 @@ public class DireccionTest {
 
         posicion = direccion.proximaPosicion(posicion);
 
-        Assertions.assertEquals(new Posicion(0,-10), posicion);
+        Assertions.assertEquals(new Posicion(0,10), posicion);
     }
 }

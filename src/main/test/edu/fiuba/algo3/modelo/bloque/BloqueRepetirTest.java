@@ -28,7 +28,7 @@ public class BloqueRepetirTest {
 
         Posicion posicion = sectorDibujo.getPersonaje().getPosicion();
 
-        Assertions.assertEquals(new Posicion(0,-20), posicion);
+        Assertions.assertEquals(new Posicion(0,20), posicion);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class BloqueRepetirTest {
 
         Posicion posicion = sectorDibujo.getPersonaje().getPosicion();
 
-        Assertions.assertEquals(new Posicion(0,-20), posicion);
+        Assertions.assertEquals(new Posicion(0,20), posicion);
     }
 
     @Test
@@ -57,6 +57,6 @@ public class BloqueRepetirTest {
 
         Posicion posicion = sectorDibujo.getPersonaje().getPosicion();
 
-        Assertions.assertEquals(new Posicion(0,20), posicion);
+        Assertions.assertEquals(new Posicion(0,-20), posicion);
     }
 }

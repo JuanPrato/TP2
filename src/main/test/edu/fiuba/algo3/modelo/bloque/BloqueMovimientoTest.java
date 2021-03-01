@@ -44,7 +44,7 @@ public class BloqueMovimientoTest {
 
         Posicion posicionPersonaje = sectorDibujo.getPersonaje().getPosicion();
 
-        Assertions.assertEquals(new Posicion(0, -10), posicionPersonaje);
+        Assertions.assertEquals(new Posicion(0, 10), posicionPersonaje);
 
     }
 
