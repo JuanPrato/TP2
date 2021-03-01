@@ -8,9 +8,9 @@ public class Personaje {
 
     private Posicion posicion = new Posicion();
 
-    private Lapiz lapiz = new Lapiz();
+    private final Lapiz lapiz = new Lapiz();
 
-    Personaje() {}
+    public Personaje() {}
 
     public Lapiz getLapiz() {
         return lapiz;

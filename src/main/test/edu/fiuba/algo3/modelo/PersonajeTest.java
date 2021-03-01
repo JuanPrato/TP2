@@ -5,6 +5,7 @@ import edu.fiuba.algo3.modelo.bloque.BloqueBajarLapiz;
 import edu.fiuba.algo3.modelo.bloque.BloqueLevantarLapiz;
 import edu.fiuba.algo3.modelo.bloque.BloqueMovimiento;
 import edu.fiuba.algo3.modelo.direccion.Direccion;
+import edu.fiuba.algo3.modelo.linea.Linea;
 import edu.fiuba.algo3.modelo.sector.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -33,94 +34,34 @@ public class PersonajeTest {
     }
 
     @Test
-    void puedoBajarElLapizConElBloqueCorrespondiente(){
-        IBloque bloqueBajarLapiz = new BloqueBajarLapiz();
-        List<IBloque> bloques = new ArrayList<IBloque>();
-        bloques.add(bloqueBajarLapiz);
+    void testBajarElLapizDeberiaBajarElLapiz(){
+        personaje.bajarLapiz();
 
-        bloques.forEach(bloque -> {
-            bloque.accion(sectorDibujo);
-        });
+        Linea linea = personaje.moverYDibujar(Direccion.izquierda());
+
+        Assertions.assertTrue(linea.colocar());
 
     }
 
     @Test
-    void puedoLevantarElLapizDespuesDeBajarloUsandoLosBloquesCorrespondientes() {
+    void testLevantarElLapizDeberiaLevantarElLapiz() {
 
-        IBloque bloqueBajarLapiz = new BloqueBajarLapiz();
-        bloqueBajarLapiz.accion(sectorDibujo);
+        personaje.bajarLapiz();
+        personaje.subirLapiz();
 
-        IBloque bloqueLevantarLapiz = new BloqueLevantarLapiz();
-        List<IBloque> bloques = new ArrayList<IBloque>();
-        bloques.add(bloqueLevantarLapiz);
+        Linea linea = personaje.moverYDibujar(Direccion.izquierda());
 
-        bloques.forEach(bloque -> {
-           bloque.accion(sectorDibujo);
-        });
+        Assertions.assertFalse(linea.colocar());
 
     }
 
     @Test
-    void puedoMoverAlPersonajeHaciaArribaUsandoLosBloquesCorrespondientes() {
+    void testMoverYDibujarDeberiaMoverAlPersonajeYGenerarUnaLinea() {
 
-        IBloque nuevoBloque = new BloqueMovimiento(Direccion.arriba());
-        List<IBloque> bloques = new ArrayList<IBloque>();
-        bloques.add(nuevoBloque);
+        Linea linea = personaje.moverYDibujar(Direccion.derecha());
 
-        int posicionInicialEnY = personaje.getPosicion().getPosicionY();
-
-        bloques.forEach(bloque -> {
-            bloque.accion(sectorDibujo);
-        });
-
-        Assertions.assertEquals(posicionInicialEnY + 1, personaje.getPosicion().getPosicionY());
+        Assertions.assertNotNull(linea);
+        Assertions.assertEquals(new Posicion(10,0), personaje.getPosicion());
     }
 
-    @Test
-    void puedoMoverAlPersonajeHaciaAbajoUsandoLosBloquesCorrespondientes() {
-
-        IBloque nuevoBloque = new BloqueMovimiento(Direccion.abajo());
-        List<IBloque> bloques = new ArrayList<IBloque>();
-        bloques.add(nuevoBloque);
-
-        int posicionInicialEnY = personaje.getPosicion().getPosicionY();
-
-        bloques.forEach(bloque -> {
-            bloque.accion(sectorDibujo);
-        });
-
-        Assertions.assertEquals(posicionInicialEnY - 1, personaje.getPosicion().getPosicionY());
-    }
-
-    @Test
-    void puedoMoverAlPersonajeHaciaIzquiedaUsandoLosBloquesCorrespondientes() {
-
-        IBloque nuevoBloque = new BloqueMovimiento(Direccion.izquierda());
-        List<IBloque> bloques = new ArrayList<IBloque>();
-        bloques.add(nuevoBloque);
-
-        int posicionInicialEnY = personaje.getPosicion().getPosicionY();
-
-        bloques.forEach(bloque -> {
-            bloque.accion(sectorDibujo);
-        });
-
-        Assertions.assertEquals(posicionInicialEnY - 1, personaje.getPosicion().getPosicionX());
-    }
-
-    @Test
-    void puedoMoverAlPersonajeHaciaDerechaUsandoLosBloquesCorrespondientes() {
-
-        IBloque nuevoBloque = new BloqueMovimiento(Direccion.derecha());
-        List<IBloque> bloques = new ArrayList<IBloque>();
-        bloques.add(nuevoBloque);
-
-        int posicionInicialEnY = personaje.getPosicion().getPosicionY();
-
-        bloques.forEach(bloque -> {
-            bloque.accion(sectorDibujo);
-        });
-
-        Assertions.assertEquals(posicionInicialEnY + 1, personaje.getPosicion().getPosicionX());
-    }
 }

@@ -7,6 +7,7 @@ public class SectorBloque extends BloqueAcoplado {
 
     public SectorBloque () {}
 
+
     public void ejecutarSecuenciaBLoques(SectorDibujo sectorDibujo){
 
     }

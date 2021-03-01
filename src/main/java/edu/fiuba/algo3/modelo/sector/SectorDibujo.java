@@ -9,7 +9,7 @@ import edu.fiuba.algo3.modelo.linea.Linea;
 public class SectorDibujo {
 
     private Tablero tablero = new Tablero();
-    private Personaje personaje;
+    private Personaje personaje = new Personaje();
 
     public SectorDibujo() {
     }
@@ -21,6 +21,8 @@ public class SectorDibujo {
     public Personaje getPersonaje() {
         return personaje;
     }
+
+    public Tablero getTablero(){return tablero;}
 
     public void setPersonaje(Personaje personaje) {
         this.personaje = personaje;
