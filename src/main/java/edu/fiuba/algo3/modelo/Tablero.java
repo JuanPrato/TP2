@@ -7,28 +7,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tablero {
-    private List<Linea> recorrido = new ArrayList<Linea>();
-    private int cantidadDeTramos;
+    private final List<Linea> recorrido = new ArrayList<Linea>();
 
     public Tablero(){
     }
 
-    public void retrocederPersonaje( ){
-        recorrido.remove(cantidadDeTramos - 1);
-    }
-
     public void actualizar(Linea linea){
         recorrido.add(linea);
-        cantidadDeTramos += 1;
     }
 
     public List<Linea> getRecorrido(){
         return recorrido;
     }
 
-    public void visualizar(){
+    public List<Object> visualizar(){
+        List<Object> lineas = new ArrayList<Object>();
         for (Linea linea : recorrido) {
-            linea.colocar();
+            lineas.add(linea.colocar());
         }
+        return lineas;
     }
 }
