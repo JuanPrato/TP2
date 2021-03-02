@@ -3,7 +3,7 @@ package edu.fiuba.algo3.modelo.bloque;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 
 public class BloqueBajarLapiz implements IBloque {
-    private UsarLapiz usoLapiz = new BajarLapiz();
+    private IUsarLapiz usoLapiz = new BajarLapiz();
 
     public BloqueBajarLapiz() {
     }
