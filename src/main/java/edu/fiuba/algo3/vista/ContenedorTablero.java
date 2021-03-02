@@ -14,6 +14,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class ContenedorTablero extends VBox {
@@ -27,13 +28,12 @@ public class ContenedorTablero extends VBox {
         this.setPadding(new Insets(100,100,100,100));
         this.setBackground(new Background(new BackgroundFill(Color.web("#00f"), CornerRadii.EMPTY, Insets.EMPTY)));
         this.setSpacing(5);
-        Box b = new Box(10,10,10);
+        Rectangle b = new Rectangle(15,15);
         setPosicionDelPersonaje(b, sectorDibujo.getPersonaje().getPosicion());
-        b.setMaterial(new PhongMaterial(Color.RED));
         this.getChildren().addAll(b);
     }
 
-    private void setPosicionDelPersonaje(Box b, Posicion posicion){
+    private void setPosicionDelPersonaje(Rectangle b, Posicion posicion){
         b.setTranslateX(posicion.getPosicionX());
         b.setTranslateY(posicion.getPosicionY());
     }
