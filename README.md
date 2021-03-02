@@ -9,11 +9,10 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 ## Grupo {N15}
 
 * **Juan Manuel Prato** - [github](https://github.com/JuanPrato)
-* **Integrante 2** - [integrante2](https://github.com/integrante2)
+* **Juan Ignacio Karabin** - [github](https://github.com/juankbn)
 * **Integrante 3** - [integrante3](https://github.com/integrante3)
-* **Integrante 4** - [integrante4](https://github.com/integrante4)
 
-Corrector: **{Corrector}**
+Corrector: **Pablo Rodríguez Massuh**
 
 ### Pre-requisitos
 
