@@ -36,13 +36,13 @@ public class ContenedorAlgoritmos extends VBox {
 
         List<Button> bloques = sectorAlgoritmo.vistasBloques(stage);
 
-        Button botonRemover = new BotonRemover("Remover", 140, 70, 160, 70, Color.web("7665a0"), Color.web("645880"));
+        /*Button botonRemover = new BotonRemover("Remover", 140, 70, 160, 70, Color.web("7665a0"), Color.web("645880"));
         //botonRemover.setOnAction(new BotonRemoverEventHandler());
         botonRemover.setDefaultButton(true);
         botonRemover.setLayoutX(0);
-        botonRemover.setLayoutY(0);
+        botonRemover.setLayoutY(0);*/
 
-        this.getChildren().addAll(botonRemover, titulo);
+        this.getChildren().addAll(titulo); //saco botonRemover
         this.getChildren().addAll(bloques);
     }
 
