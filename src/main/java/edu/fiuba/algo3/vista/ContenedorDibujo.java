@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.controlador.BotonSalirEventHandler;
+import edu.fiuba.algo3.modelo.bloque.BloqueAcoplado;
 import edu.fiuba.algo3.modelo.sector.SectorAlgoritmo;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.event.ActionEvent;
@@ -16,7 +17,7 @@ import javafx.stage.Stage;
 public class ContenedorDibujo extends VBox {
     private Stage stage;
 
-    public ContenedorDibujo(Stage stage, SectorDibujo sectorDibujo, SectorAlgoritmo sectorAlgoritmo) {
+    public ContenedorDibujo(Stage stage, SectorDibujo sectorDibujo, BloqueAcoplado sectorAlgoritmo) {
         super();
         this.stage = stage;
         this.setAlignment(Pos.BOTTOM_LEFT);
@@ -30,8 +31,8 @@ public class ContenedorDibujo extends VBox {
         botonEjecutar.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                sectorAlgoritmo.ejecutarAlgoritmo();
-                stage.setScene(new Scene(new ContenedorVentana(stage,sectorAlgoritmo),1700,800));
+                SectorAlgoritmo.getInstance().ejecutarAlgoritmo(sectorDibujo);
+                stage.setScene(SceneUtil.getScene(stage, sectorAlgoritmo, sectorDibujo));
             }
         });
         botonEjecutar.setDefaultButton(true);

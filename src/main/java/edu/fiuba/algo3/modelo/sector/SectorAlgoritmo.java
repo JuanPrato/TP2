@@ -14,40 +14,30 @@ import java.util.List;
 
 
 public class SectorAlgoritmo extends BloqueAcoplado {
-    private final SectorDibujo sectorDibujo;
-    private SectorBloque sectorBloque;
-    private List<IBloque> bloques;
 
-    public SectorAlgoritmo() {
-        this.bloques = new ArrayList<IBloque>();
-        this.sectorDibujo = new SectorDibujo();
+    static private final SectorAlgoritmo sectorAlgoritmoInst = new SectorAlgoritmo();
+
+    private SectorAlgoritmo() {
+        super();
     }
 
-    public void addBloque(IBloque bloque){
-        bloques.add(bloque);
-    }
+    /*public void addBloque(IBloque bloque){
+       bloques.add(bloque);
+    }*/
 
-    public List<Button> vistasBloques(){
-        System.out.println(bloques.size());
-        List<Button> boxes = new ArrayList<>();
-        bloques.forEach(bloque -> {
-            boxes.add(0, bloque.vista());
-        });
-        return boxes;
-    }
-
-    public void ejecutarAlgoritmo() {
-        this.bloques.forEach(bloque -> {
+    public void ejecutarAlgoritmo(SectorDibujo sectorDibujo) {
+        this.bloquesAcoplados.forEach(bloque -> {
             bloque.accion(sectorDibujo);
         });
     }
 
-    public void reiniciarJuego() {
+    public void reiniciarJuego(SectorDibujo sectorDibujo) {
         sectorDibujo.limpiarTablero();
-        this.bloques = new ArrayList<IBloque>();
+        this.bloquesAcoplados = new ArrayList<IBloque>();
     }
 
-    public SectorDibujo getSectorDibujo(){
-        return this.sectorDibujo;
+    static public SectorAlgoritmo getInstance(){
+        return sectorAlgoritmoInst;
     }
+
 }

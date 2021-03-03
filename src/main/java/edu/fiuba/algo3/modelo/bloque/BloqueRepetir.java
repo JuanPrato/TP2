@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo.bloque;
 
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class BloqueRepetir extends BloqueAcoplado implements IBloque {
     int nRepeticiones;
@@ -28,8 +29,9 @@ public class BloqueRepetir extends BloqueAcoplado implements IBloque {
     }
 
     @Override
-    public Button vista() {
-        Button b = new Button("SELECT");
+    public Button vista(Stage stage) {
+        Button b = new Button("REPETIR");
+        b.setOnAction(new BloqueRepetirHandler(this, stage));
         return b;
     }
 }
