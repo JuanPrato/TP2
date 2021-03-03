@@ -69,7 +69,7 @@ public class ContenedorBloques extends VBox {
         botonBloqueArriba.setDefaultButton(true);
         botones.add(botonInvertir);
 
-        Button botonLimpiar = new BotonLimpiar("Repetir", 140, 70, 160, 70, Color.web("ef5ca3"), Color.web("ae3e74"));
+        Button botonLimpiar = new BotonLimpiar("Reiniciar", 140, 70, 160, 70, Color.web("7665a0"), Color.web("645880"));
         botonLimpiar.setOnAction(new BotonLimpiarEventHandler(stage, sectorAlgoritmo));
         botonBloqueArriba.setDefaultButton(true);
         botones.add(botonLimpiar);
