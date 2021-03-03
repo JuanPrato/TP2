@@ -69,15 +69,15 @@ public class ContenedorBloques extends VBox {
         botonInvertir.setDefaultButton(true);
         botones.add(botonInvertir);
 
-        Button botonLimpiar = new BotonBloque("Limpiar", 140, 70, 160, 70, Color.web("ef5ca3"), Color.web("ae3e74"));
-        botonLimpiar.setOnAction(new BotonLimpiarEventHandler(stage));
-        botonLimpiar.setDefaultButton(true);
-        botones.add(botonLimpiar);
-
         Button botonFree = new BotonBloque("Free", 140, 70, 160, 70, Color.web("ef5ca3"), Color.web("ae3e74"));
         botonFree.setOnAction(new BotonFreeEventHandler(stage));
         botonFree.setDefaultButton(true);
         botones.add(botonFree);
+
+        Button botonLimpiar = new BotonBloque("Reiniciar", 140, 70, 160, 70, Color.web("7665a0"), Color.web("645880"));
+        botonLimpiar.setOnAction(new BotonLimpiarEventHandler(stage));
+        botonLimpiar.setDefaultButton(true);
+        botones.add(botonLimpiar);
 
         /*
         Button eliminarUltimo = new BotonEliminarUltimo("Repetir", 140, 70, 160, 70, Color.web("ef5ca3"), Color.web("ae3e74"));
