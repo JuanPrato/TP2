@@ -106,7 +106,7 @@ public class ContenedorBloques extends VBox {
         botonLimpiar.setOnAction(new BotonLimpiarEventHandler(stage));
         botonLimpiar.setDefaultButton(true);
         botones.add(botonLimpiar);
-        
+
         this.getChildren().addAll(titulo);
         this.getChildren().addAll(botones);
 
