@@ -25,7 +25,7 @@ public class ContenedorAlgoritmos extends VBox {
     public ContenedorAlgoritmos(Stage stage, BloqueAcoplado sectorAlgoritmo) {
         super();
         this.stage = stage;
-        stage.setMaximized(true);
+        //stage.setMaximized(true);
         this.setPadding(new Insets(400,330,400,400));
         this.setBackground(new Background(new BackgroundFill(Color.web("#a29bfe"), CornerRadii.EMPTY, Insets.EMPTY)));
 

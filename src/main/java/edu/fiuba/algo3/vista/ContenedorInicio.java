@@ -19,6 +19,7 @@ public class ContenedorInicio extends VBox {
     public ContenedorInicio(Stage stage){
         super();
         this.stage = stage;
+        stage.setResizable(false);
         this.setAlignment(Pos.CENTER);
         this.setPadding(new Insets(20,20,20,20));
         this.setBackground(new Background(new BackgroundFill(Color.web("fff9f0"), CornerRadii.EMPTY, Insets.EMPTY)));

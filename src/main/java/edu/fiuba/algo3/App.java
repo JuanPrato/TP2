@@ -24,14 +24,10 @@ public class App extends Application {
     public void start(Stage stage) {
         Scene escenaInicio = new Scene(new ContenedorInicio(stage), 500,700);
 
-        /*Image ejemplo = new Image("vista/dibujarArriba.jpg");
-        ImageView imageView = new ImageView(ejemplo);
-        StackPane root = new StackPane();
-        root.getChildren().add(imageView);
-        Scene escenaInicio = new Scene(root); Prueba de imagen*/
-
         stage.setTitle("AlgoBlocks");
         stage.setScene(escenaInicio);
+        stage.getIcons().add(new Image("vista/imagenes/LapizLevantado.png"));
+        //stage.setResizable(false);
         stage.show();
 
         //StackPane layout = new StackPane();

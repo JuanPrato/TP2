@@ -20,7 +20,8 @@ public class ContenedorDibujo extends VBox {
     public ContenedorDibujo(Stage stage, SectorDibujo sectorDibujo, BloqueAcoplado sectorAlgoritmo) {
         super();
         this.stage = stage;
-        stage.setMaximized(true);
+        //stage.setMaximized(true);
+        this.setAlignment(Pos.CENTER);
         this.setPadding(new Insets(100,100,100,100));
         this.setBackground(new Background(new BackgroundFill(Color.web("f0f8fb"), CornerRadii.EMPTY, Insets.EMPTY)));
         this.setSpacing(5);
