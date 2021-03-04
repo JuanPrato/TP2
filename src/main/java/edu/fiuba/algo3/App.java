@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -21,8 +22,13 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
-
         Scene escenaInicio = new Scene(new ContenedorInicio(stage), 500,700);
+
+        /*Image ejemplo = new Image("vista/dibujarArriba.jpg");
+        ImageView imageView = new ImageView(ejemplo);
+        StackPane root = new StackPane();
+        root.getChildren().add(imageView);
+        Scene escenaInicio = new Scene(root); Prueba de imagen*/
 
         stage.setTitle("AlgoBlocks");
         stage.setScene(escenaInicio);
