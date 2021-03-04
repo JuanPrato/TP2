@@ -23,9 +23,10 @@ public class ContenedorTablero extends VBox {
     public ContenedorTablero(Stage stage, SectorDibujo sectorDibujo) {
         super(100);
         this.stage = stage;
+        stage.setMaximized(true);
         this.sectorDibujo = sectorDibujo;
         this.setAlignment(Pos.TOP_LEFT);
-        this.setPadding(new Insets(100,100,100,100));
+        this.setPadding(new Insets(150,150,150,150));
         this.setBackground(new Background(new BackgroundFill(Color.web("#00f"), CornerRadii.EMPTY, Insets.EMPTY)));
         this.setSpacing(5);
         Rectangle b = new Rectangle(15,15);

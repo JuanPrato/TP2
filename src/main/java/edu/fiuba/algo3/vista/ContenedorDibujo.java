@@ -20,7 +20,7 @@ public class ContenedorDibujo extends VBox {
     public ContenedorDibujo(Stage stage, SectorDibujo sectorDibujo, BloqueAcoplado sectorAlgoritmo) {
         super();
         this.stage = stage;
-        this.setAlignment(Pos.BOTTOM_LEFT);
+        stage.setMaximized(true);
         this.setPadding(new Insets(100,100,100,100));
         this.setBackground(new Background(new BackgroundFill(Color.web("f0f8fb"), CornerRadii.EMPTY, Insets.EMPTY)));
         this.setSpacing(5);
@@ -41,7 +41,7 @@ public class ContenedorDibujo extends VBox {
         Region region = new Region();
         region.setPrefHeight(70);
 
-        // Este es un separador
+        // Otro separador
         Region region2 = new Region();
         region.setPrefHeight(50);
 

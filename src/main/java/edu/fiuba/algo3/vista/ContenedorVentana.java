@@ -6,6 +6,7 @@ import edu.fiuba.algo3.modelo.sector.SectorAlgoritmo;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
@@ -17,9 +18,10 @@ public class ContenedorVentana extends HBox {
     public ContenedorVentana(Stage stage, BloqueAcoplado sectorAlgoritmo, SectorDibujo sectorDibujo) {
         super();
         this.stage = stage;
-        this.setAlignment(Pos.BOTTOM_LEFT);
-        this.setHeight(200);
-        this.setPadding(new Insets(20,20,20,20));
+        stage.setMaximized(true);
+        //this.setAlignment(Pos.BOTTOM_LEFT);
+        //this.setHeight(200);
+        //this.setPadding(new Insets(20,20,20,20));
         this.setBackground(new Background(new BackgroundFill(Color.web("F7F5E6"), CornerRadii.EMPTY, Insets.EMPTY)));
         this.setSpacing(20);
 
@@ -27,7 +29,10 @@ public class ContenedorVentana extends HBox {
 
         VBox contenedorDibujo = new ContenedorDibujo(stage, sectorDibujo, sectorAlgoritmo);
 
-        VBox contenedorAlgoritmos = new ContenedorAlgoritmos(stage, sectorAlgoritmo);
+        ScrollPane scrollPane = new ScrollPane();
+        scrollPane.setFitToWidth(false);
+        scrollPane.setContent(new ContenedorAlgoritmos(stage, sectorAlgoritmo));
+        //VBox contenedorAlgoritmos = new ContenedorAlgoritmos(stage, sectorAlgoritmo);
 
         this.getChildren().addAll(contenedorDibujo, contenedorBloques, contenedorAlgoritmos);
 
