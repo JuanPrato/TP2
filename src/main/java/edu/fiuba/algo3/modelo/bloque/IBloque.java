@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo.bloque;
 
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public interface IBloque {
@@ -10,7 +11,10 @@ public interface IBloque {
 
     void invertir();
 
-    default Button vista(Stage stage){
-        return new Button("BLOCK");
+    default VBox vista(Stage stage){
+        VBox box = new VBox(100);
+        Button b = new Button("BLOCK");
+        box.getChildren().add(b);
+        return box;
     }
 }

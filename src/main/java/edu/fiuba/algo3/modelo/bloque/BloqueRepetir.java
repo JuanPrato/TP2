@@ -1,8 +1,12 @@
 package edu.fiuba.algo3.modelo.bloque;
 
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.util.List;
 
 public class BloqueRepetir extends BloqueAcoplado implements IBloque {
     int nRepeticiones;
@@ -29,9 +33,16 @@ public class BloqueRepetir extends BloqueAcoplado implements IBloque {
     }
 
     @Override
-    public Button vista(Stage stage) {
-        Button b = new Button("REPETIR");
-        b.setOnAction(new BloqueRepetirHandler(this, stage));
-        return b;
+    public VBox vista(Stage stage) {
+        VBox rec = new VBox();
+        Button b = new Button(String.format("REPETIR %s", nRepeticiones));
+        List<VBox> boxs = this.vistasBloques(stage);
+        for (VBox box: boxs){
+            box.setPadding(new Insets(0,0,0,15));
+        }
+        b.setOnAction(new BloqueAcopladoHandler(this, stage));
+        rec.getChildren().add(b);
+        rec.getChildren().addAll(boxs);
+        return rec;
     }
 }

@@ -1,12 +1,12 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.controlador.BotonBloqueDireccionEventHandler;
-import edu.fiuba.algo3.controlador.BotonBloqueRepetirEventHandler;
+import edu.fiuba.algo3.controlador.BotonBloqueEventHandler;
 import edu.fiuba.algo3.controlador.BotonLimpiarEventHandler;
 import edu.fiuba.algo3.modelo.bloque.BloqueAcoplado;
+import edu.fiuba.algo3.modelo.bloque.BloqueInvertir;
 import edu.fiuba.algo3.modelo.bloque.BloqueRepetir;
 import edu.fiuba.algo3.modelo.direccion.Direccion;
-import edu.fiuba.algo3.modelo.sector.SectorAlgoritmo;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -60,12 +60,17 @@ public class ContenedorBloques extends VBox {
         botones.add(botonBloqueDerecha);
 
         Button botonBloqueRepetir = new BotonBloque("Repetir", 140, 70, 160, 70, Color.web("ef5ca3"), Color.web("ae3e74"));
-        botonBloqueRepetir.setOnAction(new BotonBloqueRepetirEventHandler(stage, sectorAlgoritmo, sectorDibujo, new BloqueRepetir(2)));
+        botonBloqueRepetir.setOnAction(new BotonBloqueEventHandler(stage, sectorAlgoritmo, sectorDibujo, new BloqueRepetir(2)));
         botonBloqueRepetir.setDefaultButton(true);
         botones.add(botonBloqueRepetir);
 
+        Button botonBloqueRepetir3 = new BotonBloque("Repetir 3", 140, 70, 160, 70, Color.web("ef5ca3"), Color.web("ae3e74"));
+        botonBloqueRepetir3.setOnAction(new BotonBloqueEventHandler(stage, sectorAlgoritmo, sectorDibujo, new BloqueRepetir(3)));
+        botonBloqueRepetir3.setDefaultButton(true);
+        botones.add(botonBloqueRepetir3);
+
         Button botonInvertir = new BotonBloque("Invertir", 140, 70, 160, 70, Color.web("ef5ca3"), Color.web("ae3e74"));
-        //botonInvertir.setOnAction(new BotonBloqueRepetirEventHandler(stage, sectorAlgoritmo, sectorDibujo, new BloqueRepetir(2)));
+        botonInvertir.setOnAction(new BotonBloqueEventHandler(stage, sectorAlgoritmo, sectorDibujo, new BloqueInvertir()));
         botonInvertir.setDefaultButton(true);
         botones.add(botonInvertir);
 

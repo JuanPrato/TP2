@@ -6,11 +6,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
 
-public class BloqueRepetirHandler implements EventHandler<ActionEvent> {
+public class BloqueAcopladoHandler implements EventHandler<ActionEvent> {
 
     private final BloqueAcoplado bloqueAcoplado;
     private final Stage stage;
-    public BloqueRepetirHandler(BloqueAcoplado bloque, Stage stage){
+    public BloqueAcopladoHandler(BloqueAcoplado bloque, Stage stage){
         this.bloqueAcoplado = bloque;
         this.stage = stage;
     }

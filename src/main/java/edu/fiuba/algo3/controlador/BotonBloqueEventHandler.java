@@ -2,6 +2,7 @@ package edu.fiuba.algo3.controlador;
 
 import edu.fiuba.algo3.modelo.bloque.BloqueAcoplado;
 import edu.fiuba.algo3.modelo.bloque.BloqueRepetir;
+import edu.fiuba.algo3.modelo.bloque.IBloque;
 import edu.fiuba.algo3.modelo.sector.SectorAlgoritmo;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import edu.fiuba.algo3.vista.ContenedorVentana;
@@ -11,14 +12,14 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class BotonBloqueRepetirEventHandler implements EventHandler<ActionEvent> {
+public class BotonBloqueEventHandler implements EventHandler<ActionEvent> {
 
     private final BloqueAcoplado sectorAlgoritmo;
     private final SectorDibujo sectorDibujo;
-    private final BloqueRepetir bloqueRepetir;
+    private final IBloque bloqueRepetir;
     private final Stage stage;
 
-    public BotonBloqueRepetirEventHandler(Stage stage, BloqueAcoplado sectorAlgoritmo, SectorDibujo sectorDibujo, BloqueRepetir bloqueRepetir) {
+    public BotonBloqueEventHandler(Stage stage, BloqueAcoplado sectorAlgoritmo, SectorDibujo sectorDibujo, IBloque bloqueRepetir) {
         this.sectorAlgoritmo = sectorAlgoritmo;
         this.sectorDibujo = sectorDibujo;
         this.bloqueRepetir = bloqueRepetir;

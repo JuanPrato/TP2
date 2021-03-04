@@ -12,10 +12,10 @@ public class Direccion {
 
 
     static {
-        arriba = new Direccion(0, -1);
-        abajo = new Direccion(0, 1);
-        derecha = new Direccion(1, 0);
-        izquierda = new Direccion(-1, 0);
+        arriba = new Direccion(0, -1, "ARRIBA");
+        abajo = new Direccion(0, 1, "ABAJO");
+        derecha = new Direccion(1, 0, "DERECHA");
+        izquierda = new Direccion(-1, 0, "IZQUIERDA");
 
         arriba.setInversa(abajo);
         abajo.setInversa(arriba);
@@ -27,10 +27,12 @@ public class Direccion {
     private Direccion inversa;
     private int valueX;
     private int valueY;
+    private String direccion;
 
-    private Direccion(int valX, int valY) {
+    private Direccion(int valX, int valY, String direccion) {
         this.valueX = valX;
         this.valueY = valY;
+        this.direccion = direccion;
     }
 
     private void setInversa(Direccion inversa) {
@@ -65,4 +67,7 @@ public class Direccion {
         return izquierda;
     }
 
+    public String direccionToString() {
+        return this.direccion;
+    }
 }

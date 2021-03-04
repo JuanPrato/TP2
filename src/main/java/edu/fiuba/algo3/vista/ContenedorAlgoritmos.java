@@ -34,7 +34,7 @@ public class ContenedorAlgoritmos extends VBox {
         titulo.setFont(Font.font("Calibri", FontWeight.BOLD,20));
         titulo.setFill(Color.web("7665a0"));
 
-        List<Button> bloques = sectorAlgoritmo.vistasBloques(stage);
+        List<VBox> bloques = sectorAlgoritmo.vistasBloques(stage);
 
         /*Button botonRemover = new BotonRemover("Remover", 140, 70, 160, 70, Color.web("7665a0"), Color.web("645880"));
         //botonRemover.setOnAction(new BotonRemoverEventHandler());

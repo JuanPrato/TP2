@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo.bloque;
 
 import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
@@ -23,11 +24,11 @@ public abstract class BloqueAcoplado {
         return bloquesAcoplados;
     }
 
-    public List<Button> vistasBloques(Stage stage){
+    public List<VBox> vistasBloques(Stage stage){
         System.out.println(bloquesAcoplados.size());
-        List<Button> boxes = new ArrayList<>();
+        List<VBox> boxes = new ArrayList<>();
         bloquesAcoplados.forEach(bloque -> {
-            boxes.add(0, bloque.vista(stage));
+            boxes.add(bloque.vista(stage));
         });
         return boxes;
     }
