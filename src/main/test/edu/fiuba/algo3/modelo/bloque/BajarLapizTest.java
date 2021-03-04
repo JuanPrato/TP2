@@ -7,20 +7,20 @@ import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class LevantarLapizTest {
+public class BajarLapizTest {
 
-    private LevantarLapiz levantarLapiz = new LevantarLapiz();
+    private BajarLapiz bajarLapiz = new BajarLapiz();
     private SectorDibujo sectorDibujo = new SectorDibujo();
 
     @Test
-    void laInversaDeLevantarLapizEsBajarLapiz(){
-        IUsarLapiz esUnBajarLapiz = levantarLapiz.inversa();
-        esUnBajarLapiz.usar(sectorDibujo);
+    void laInversaDeBajarLapizEsLevantarLapiz(){
+        IUsarLapiz esUnLevantarLapiz = bajarLapiz.inversa();
+        esUnLevantarLapiz.usar(sectorDibujo);
         Personaje personaje = sectorDibujo.getPersonaje();
 
         Linea linea = personaje.moverYDibujar(Direccion.derecha());
 
-        Assertions.assertTrue(linea.colocar());
+        Assertions.assertFalse(linea.colocar());
     }
 
 }
