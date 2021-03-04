@@ -34,7 +34,7 @@ public class ContenedorVentana extends HBox {
         scrollPane.setContent(new ContenedorAlgoritmos(stage, sectorAlgoritmo));
         //VBox contenedorAlgoritmos = new ContenedorAlgoritmos(stage, sectorAlgoritmo);
 
-        this.getChildren().addAll(contenedorDibujo, contenedorBloques, contenedorAlgoritmos);
+        this.getChildren().addAll(contenedorDibujo, contenedorBloques, scrollPane);
 
     }
 
