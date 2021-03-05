@@ -27,11 +27,7 @@ public class App extends Application {
         stage.setTitle("AlgoBlocks");
         stage.setScene(escenaInicio);
         stage.getIcons().add(new Image("vista/imagenes/LapizLevantado.png"));
-        //stage.setResizable(false);
         stage.show();
-
-        //StackPane layout = new StackPane();
-        //Scene scene = new Scene(layout, 640, 480);
     }
 
     public static void main(String[] args) {

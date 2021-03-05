@@ -32,7 +32,7 @@ public class ContenedorBloques extends VBox {
         this.setAlignment(Pos.CENTER);
         this.setPadding(new Insets(50,50,50,50));
         this.setBackground(new Background(new BackgroundFill(Color.web("ffffff"), CornerRadii.EMPTY, Insets.EMPTY)));
-        this.setSpacing(20);
+        this.setSpacing(15);
 
         List<Button> botones = new ArrayList<>();
 
@@ -90,16 +90,16 @@ public class ContenedorBloques extends VBox {
         botones.add(botonBloqueRepetir3);
 
         Button botonInvertir = new BotonBloque("Invertir", 185, 70, 185, 70, Color.web("ef5ca3"),
-                Color.web("ae3e74"), new Image("vista/imagenes/BloqueArriba.png"));
+                Color.web("ae3e74"), new Image("vista/imagenes/Invertir.png"));
         botonInvertir.setOnAction(new BotonBloqueEventHandler(stage, sectorAlgoritmo, sectorDibujo, new BloqueInvertir()));
         botonInvertir.setDefaultButton(true);
         botones.add(botonInvertir);
 
-        /*Button botonFree = new BotonBloque("Free", 185, 70, 185, 70, Color.web("ef5ca3"),
-                Color.web("ae3e74"), new Image("vista/imagenes/BloqueArriba.png"));
+        Button botonFree = new BotonBloque("Free", 185, 70, 185, 70, Color.web("ef5ca3"),
+                Color.web("ae3e74"), new Image("vista/imagenes/Repetir.png"));
         botonFree.setOnAction(new BotonFreeEventHandler(stage));
         botonFree.setDefaultButton(true);
-        botones.add(botonFree);*/
+        botones.add(botonFree);
 
         Button botonLimpiar = new BotonBloque("Reiniciar", 185, 70, 185, 70, Color.web("7665a0"),
                 Color.web("645880"), new Image("vista/imagenes/Limpiar.png"));

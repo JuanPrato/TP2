@@ -1,45 +1,66 @@
 package edu.fiuba.algo3.vista;
 
-import edu.fiuba.algo3.controlador.BotonSalirEventHandler;
-import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.Tablero;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
-import javafx.css.converter.PaintConverter;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.paint.PhongMaterial;
-import javafx.scene.shape.Box;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
-public class ContenedorTablero extends VBox {
-    private Stage stage;
+
+public class ContenedorTablero extends GridPane {
     private SectorDibujo sectorDibujo;
-    public ContenedorTablero(Stage stage, SectorDibujo sectorDibujo) {
-        super(100);
-        this.stage = stage;
-        stage.setMaximized(true);
+    private Rectangle[][] celda;
+
+    public ContenedorTablero(SectorDibujo sectorDibujo) {
         this.sectorDibujo = sectorDibujo;
-        this.setAlignment(Pos.TOP_LEFT);
-        this.setPadding(new Insets(100,100,100,100));
-        this.setBackground(new Background(new BackgroundFill(Color.web("#00f"), CornerRadii.EMPTY, Insets.EMPTY)));
-        this.setSpacing(5);
-        Rectangle b = new Rectangle(15,15);
-        setPosicionDelPersonaje(b, sectorDibujo.getPersonaje().getPosicion());
-        this.getChildren().addAll(b);
+        this.celda = new Rectangle[50][50];
+        inicializarTableroVista();
+        dibujarLinea(new Posicion(25,25),new Posicion(35,26));
+        this.setGridLinesVisible(false);
     }
 
-    private void setPosicionDelPersonaje(Rectangle b, Posicion posicion){
-        b.setTranslateX(posicion.getPosicionX());
-        b.setTranslateY(posicion.getPosicionY());
+    public void dibujarLinea(Posicion posInicial, Posicion posFinal){
+        for(int i=posInicial.getPosicionX() ; i < posFinal.getPosicionX(); i++){
+            for(int j=posInicial.getPosicionY(); j < posFinal.getPosicionY(); j++){
+                this.celda[i][j].setFill(Color.BLACK);
+            }
+        }
     }
+
+    private void inicializarTableroVista() {
+        for (int j = 0; j < 50; j++) {
+            for (int i = 0; i < 50; i++) {
+                Rectangle relleno = new Rectangle(10, 10, Color.TRANSPARENT);
+                this.add(relleno, j, i);
+                this.celda[i][j] = relleno;
+            }
+        }
+    }
+
+        /*private void dibujarLinea(){
+        for(int i=25; i < 35; i++){
+            for(int j=25; j < 26; j++){
+                this.celda[i][j].setFill(Color.BLACK);
+            }
+        }
+    }*/
+
+
+    /*private void setPosicionDelPersonaje(Rectangle personaje, Posicion posicion){
+
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(2), new KeyValue(personaje.translateXProperty(), posicion.getPosicionX() +10) );
+        Timeline timeline = new Timeline(keyFrame);
+
+        timeline.play();
+
+        //personaje.setTranslateX(posicion.getPosicionX());
+        //personaje.setTranslateY(posicion.getPosicionY());
+    }*/
+
 
 }
