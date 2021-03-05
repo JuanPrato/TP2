@@ -26,7 +26,7 @@ public class App extends Application {
 
         stage.setTitle("AlgoBlocks");
         stage.setScene(escenaInicio);
-        stage.getIcons().add(new Image("vista/imagenes/LapizLevantado.png"));
+        stage.getIcons().add(new Image("file:LapizLevantado.png"));
         //stage.setResizable(false);
         stage.show();
 
