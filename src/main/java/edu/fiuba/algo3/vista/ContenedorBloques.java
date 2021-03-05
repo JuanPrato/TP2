@@ -41,56 +41,57 @@ public class ContenedorBloques extends VBox {
         titulo.setFill(Color.web("7665a0"));
 
         Button botonBloqueArriba = new BotonBloque("Arriba", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("file:vista/imagenes/BloqueArriba.png"));
+        Color.web("00adbc"), Color.web("036a73"), new Image("file:BloqueArriba.png"));
         botonBloqueArriba.setOnAction(new BotonBloqueDireccionEventHandler(stage, sectorAlgoritmo, sectorDibujo, Direccion.arriba()));
         botonBloqueArriba.setDefaultButton(true);
         botones.add(botonBloqueArriba);
 
         Button botonBloqueAbajo = new BotonBloque("Abajo", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("file:vista/imagenes/BloqueAbajo.png"));
+        Color.web("00adbc"), Color.web("036a73"), new Image("file:BloqueAbajo.png"));
         botonBloqueAbajo.setOnAction(new BotonBloqueDireccionEventHandler(stage, sectorAlgoritmo, sectorDibujo, Direccion.abajo()));
         botonBloqueAbajo.setDefaultButton(true);
         botones.add(botonBloqueAbajo);
 
         Button botonBloqueIzquierda = new BotonBloque("Izquierda", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("file:vista/imagenes/BloqueIzquierda.png"));
+        Color.web("00adbc"), Color.web("036a73"), new Image("file:BloqueIzquierda.png"));
         botonBloqueIzquierda.setOnAction(new BotonBloqueDireccionEventHandler(stage, sectorAlgoritmo, sectorDibujo, Direccion.izquierda()));
         botonBloqueIzquierda.setDefaultButton(true);
         botones.add(botonBloqueIzquierda);
 
         Button botonBloqueDerecha = new BotonBloque("Derecha", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("file:vista/imagenes/BloqueDerecha.png"));
+        Color.web("00adbc"), Color.web("036a73"), new Image("file:BloqueDerecha.png"));
         botonBloqueDerecha.setOnAction(new BotonBloqueDireccionEventHandler(stage, sectorAlgoritmo, sectorDibujo, Direccion.derecha()));
         botonBloqueDerecha.setDefaultButton(true);
         botones.add(botonBloqueDerecha);
 
         Button botonBloqueBajarLapiz = new BotonBloque("Bajar Lapiz", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("file:vista/imagenes/LapizAbajo.png"));
+        Color.web("00adbc"), Color.web("036a73"), new Image("file:LapizAbajo.png"));
         botonBloqueDerecha.setOnAction(new BotonBloqueDireccionEventHandler(stage, sectorAlgoritmo, sectorDibujo, Direccion.derecha()));
         botonBloqueDerecha.setDefaultButton(true);
         botones.add(botonBloqueBajarLapiz);
 
         Button botonBloqueSubirLapiz = new BotonBloque("Subir Lapiz", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("file:vista/imagenes/LapizLevantado.png"));
+        Color.web("00adbc"), Color.web("036a73"), new Image("file:LapizLevantado.png"));
         botonBloqueDerecha.setOnAction(new BotonBloqueDireccionEventHandler(stage, sectorAlgoritmo, sectorDibujo, Direccion.derecha()));
         botonBloqueDerecha.setDefaultButton(true);
         botones.add(botonBloqueSubirLapiz);
 
 
         Button botonBloqueRepetir = new BotonBloque("RepetirX2", 185, 70, 185, 70, Color.web("ef5ca3"),
-                Color.web("ae3e74"), new Image("file:vista/imagenes/Repetir.png"));
+                Color.web("ae3e74"), new Image("file:Repetir.png"));
         botonBloqueRepetir.setOnAction(new BotonBloqueEventHandler(stage, sectorAlgoritmo, sectorDibujo, new BloqueRepetir(2)));
         botonBloqueRepetir.setDefaultButton(true);
         botones.add(botonBloqueRepetir);
 
         Button botonBloqueRepetir3 = new BotonBloque("RepetirX3", 185, 70, 185, 70, Color.web("ef5ca3"),
-                Color.web("ae3e74"), new Image("file:vista/imagenes/Repetir.png"));
+                Color.web("ae3e74"), new Image("file:Repetir.png"));
         botonBloqueRepetir3.setOnAction(new BotonBloqueEventHandler(stage, sectorAlgoritmo, sectorDibujo, new BloqueRepetir(3)));
         botonBloqueRepetir3.setDefaultButton(true);
         botones.add(botonBloqueRepetir3);
 
         Button botonInvertir = new BotonBloque("Invertir", 185, 70, 185, 70, Color.web("ef5ca3"),
-                Color.web("ae3e74"), new Image("file:vista/imagenes/BloqueArriba.png"));
+
+                Color.web("ae3e74"), new Image("file:BloqueArriba.png"));
         botonInvertir.setOnAction(new BotonBloqueEventHandler(stage, sectorAlgoritmo, sectorDibujo, new BloqueInvertir()));
         botonInvertir.setDefaultButton(true);
         botones.add(botonInvertir);
@@ -102,7 +103,8 @@ public class ContenedorBloques extends VBox {
         botones.add(botonFree);*/
 
         Button botonLimpiar = new BotonBloque("Reiniciar", 185, 70, 185, 70, Color.web("7665a0"),
-                Color.web("645880"), new Image("file:vista/imagenes/Limpiar.png"));
+
+                Color.web("645880"), new Image("file:Limpiar.png"));
         botonLimpiar.setOnAction(new BotonLimpiarEventHandler(stage));
         botonLimpiar.setDefaultButton(true);
         botones.add(botonLimpiar);

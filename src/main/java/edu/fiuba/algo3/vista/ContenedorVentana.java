@@ -14,7 +14,7 @@ public class ContenedorVentana extends HBox {
     public ContenedorVentana(Stage stage, ContenedorDeBloques sectorAlgoritmo, SectorDibujo sectorDibujo) {
         super();
         this.stage = stage;
-        stage.setResizable(true);
+        //stage.setResizable(true);
         //this.stage.sizeToScene();
         //this.stage.setMaximized(true);
         //this.setAlignment(Pos.BOTTOM_LEFT);
@@ -30,7 +30,6 @@ public class ContenedorVentana extends HBox {
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setFitToWidth(false);
         scrollPane.setContent(new ContenedorAlgoritmos(stage, sectorAlgoritmo));
-        //VBox contenedorAlgoritmos = new ContenedorAlgoritmos(stage, sectorAlgoritmo);
 
         this.getChildren().addAll(contenedorDibujo, contenedorBloques, scrollPane);
         //this.setSpacing(20);
