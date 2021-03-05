@@ -3,6 +3,7 @@ package edu.fiuba.algo3.controlador;
 import edu.fiuba.algo3.modelo.sector.SectorAlgoritmo;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import edu.fiuba.algo3.vista.ContenedorVentana;
+import edu.fiuba.algo3.vista.SceneUtil;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -19,7 +20,7 @@ public class BotonInicioEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        stage.setScene( new Scene(new ContenedorVentana(stage, SectorAlgoritmo.getInstance(), SectorDibujo.getInstance()),1920,1080));
+        stage.setScene(SceneUtil.getScene(stage, SectorAlgoritmo.getInstance(), SectorDibujo.getInstance()));
         stage.setMaximized(true);
     }
 }

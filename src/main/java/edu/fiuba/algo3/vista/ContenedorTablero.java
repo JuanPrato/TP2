@@ -2,6 +2,7 @@ package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.Tablero;
+import edu.fiuba.algo3.modelo.linea.Linea;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -10,6 +11,9 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ContenedorTablero extends GridPane {
@@ -20,8 +24,15 @@ public class ContenedorTablero extends GridPane {
         this.sectorDibujo = sectorDibujo;
         this.celda = new Rectangle[50][50];
         inicializarTableroVista();
-        dibujarLinea(new Posicion(25,25),new Posicion(35,26));
         this.setGridLinesVisible(false);
+    }
+
+    public void dibujarTodasLineas(){
+        List<Linea> recorrido = this.sectorDibujo.getTablero().getRecorrido();
+        for (Linea linea: recorrido
+             ) {
+            dibujarLinea(linea.getPosicionInicial(), linea.getPosicionFinal());
+        }
     }
 
     public void dibujarLinea(Posicion posInicial, Posicion posFinal){

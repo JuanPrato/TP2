@@ -2,14 +2,13 @@ package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.controlador.BotonSalirEventHandler;
 import edu.fiuba.algo3.modelo.Posicion;
-import edu.fiuba.algo3.modelo.bloque.BloqueAcoplado;
+import edu.fiuba.algo3.modelo.bloque.ContenedorDeBloques;
 import edu.fiuba.algo3.modelo.sector.SectorAlgoritmo;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -24,7 +23,7 @@ import javafx.stage.Stage;
 public class ContenedorDibujo extends VBox {
     private Stage stage;
 
-    public ContenedorDibujo(Stage stage, SectorDibujo sectorDibujo, BloqueAcoplado sectorAlgoritmo) {
+    public ContenedorDibujo(Stage stage, SectorDibujo sectorDibujo, ContenedorDeBloques sectorAlgoritmo) {
         super();
         this.stage = stage;
         //stage.setMaximized(true);
@@ -36,7 +35,8 @@ public class ContenedorDibujo extends VBox {
         StackPane tablero = new StackPane();
         ContenedorTablero contenedorPersonaje = new ContenedorTablero(sectorDibujo);
 
-        //ContenedorTablero.dibujarLinea(new Posicion(25,25),new Posicion(35,26));
+        //contenedorPersonaje.dibujarLinea(new Posicion(25,25),new Posicion(35,26));
+
         Label fondoTablero = new Label();
         fondoTablero.setGraphic(new ImageView(new Image ("vista/imagenes/fondoParaDibujar.png")));
 
@@ -51,8 +51,7 @@ public class ContenedorDibujo extends VBox {
             @Override
             public void handle(ActionEvent actionEvent) {
                 SectorAlgoritmo.getInstance().ejecutarAlgoritmo(sectorDibujo);
-                //Linea lineas = sectorDibujo.getTablero().getRecorrido();
-                //contenedorPersonaje(lineas);
+                contenedorPersonaje.dibujarTodasLineas();
                 stage.setScene(SceneUtil.getScene(stage, sectorAlgoritmo, sectorDibujo));
             }
         });
@@ -71,7 +70,5 @@ public class ContenedorDibujo extends VBox {
         botonSalir.setDefaultButton(true);
 
         this.getChildren().addAll(tablero, region, botonEjecutar, region2, botonSalir);
-
     }
-
 }

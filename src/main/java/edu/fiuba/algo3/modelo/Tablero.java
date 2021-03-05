@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 
 import edu.fiuba.algo3.modelo.linea.Linea;
+import javafx.scene.shape.Line;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +21,10 @@ public class Tablero {
         return recorrido;
     }
 
-    public List<Object> visualizar(){
-        List<Object> lineas = new ArrayList<Object>();
+    public List<Line> visualizar(){
+        List<Line> lineas = new ArrayList<>();
         for (Linea linea : recorrido) {
-            lineas.add(linea.colocar());
+            lineas.add(linea.vista());
         }
         return lineas;
     }

@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BloqueAcoplado {
-    public List<IBloque> bloquesAcoplados = new ArrayList<IBloque>();
+public abstract class ContenedorDeBloques {
+    protected List<IBloque> bloquesAcoplados = new ArrayList<IBloque>();
 
-    public BloqueAcoplado () {}
+    public ContenedorDeBloques() {}
 
     public void agregarBloque(IBloque bloque) {
         bloquesAcoplados.add(bloque);

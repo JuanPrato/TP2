@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo.bloque;
 
+import edu.fiuba.algo3.controlador.BloqueAcopladoHandler;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -8,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.util.List;
 
-public class BloqueInvertir extends BloqueAcoplado implements IBloque {
+public class BloqueInvertir extends ContenedorDeBloques implements IBloque {
 
     public BloqueInvertir () {
         super();

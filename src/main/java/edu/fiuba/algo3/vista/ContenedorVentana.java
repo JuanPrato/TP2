@@ -1,24 +1,20 @@
 package edu.fiuba.algo3.vista;
 
-import edu.fiuba.algo3.modelo.Tablero;
-import edu.fiuba.algo3.modelo.bloque.BloqueAcoplado;
-import edu.fiuba.algo3.modelo.sector.SectorAlgoritmo;
+import edu.fiuba.algo3.modelo.bloque.ContenedorDeBloques;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
 public class ContenedorVentana extends HBox {
     private Stage stage;
 
-    public ContenedorVentana(Stage stage, BloqueAcoplado sectorAlgoritmo, SectorDibujo sectorDibujo) {
+    public ContenedorVentana(Stage stage, ContenedorDeBloques sectorAlgoritmo, SectorDibujo sectorDibujo) {
         super();
         this.stage = stage;
-        stage.setResizable(true);
+        //stage.setResizable(true);
         //this.stage.sizeToScene();
         //this.stage.setMaximized(true);
         //this.setAlignment(Pos.BOTTOM_LEFT);
@@ -34,7 +30,6 @@ public class ContenedorVentana extends HBox {
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setFitToWidth(false);
         scrollPane.setContent(new ContenedorAlgoritmos(stage, sectorAlgoritmo));
-        //VBox contenedorAlgoritmos = new ContenedorAlgoritmos(stage, sectorAlgoritmo);
 
         this.getChildren().addAll(contenedorDibujo, contenedorBloques, scrollPane);
         //this.setSpacing(20);

@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo.bloque;
 
+import edu.fiuba.algo3.controlador.BloqueAcopladoHandler;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -8,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.util.List;
 
-public class BloqueRepetir extends BloqueAcoplado implements IBloque {
+public class BloqueRepetir extends ContenedorDeBloques implements IBloque {
     int nRepeticiones;
 
     public BloqueRepetir(int repeticiones) {

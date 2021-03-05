@@ -1,11 +1,10 @@
 package edu.fiuba.algo3.vista;
 
+import edu.fiuba.algo3.controlador.BotonModificarLapizEventHandle;
 import edu.fiuba.algo3.controlador.BotonBloqueDireccionEventHandler;
 import edu.fiuba.algo3.controlador.BotonBloqueEventHandler;
 import edu.fiuba.algo3.controlador.BotonLimpiarEventHandler;
-import edu.fiuba.algo3.modelo.bloque.BloqueAcoplado;
-import edu.fiuba.algo3.modelo.bloque.BloqueInvertir;
-import edu.fiuba.algo3.modelo.bloque.BloqueRepetir;
+import edu.fiuba.algo3.modelo.bloque.*;
 import edu.fiuba.algo3.modelo.direccion.Direccion;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.geometry.Insets;
@@ -25,7 +24,7 @@ import java.util.List;
 public class ContenedorBloques extends VBox {
     private Stage stage;
 
-    public ContenedorBloques(Stage stage, BloqueAcoplado sectorAlgoritmo, SectorDibujo sectorDibujo) {
+    public ContenedorBloques(Stage stage, ContenedorDeBloques sectorAlgoritmo, SectorDibujo sectorDibujo) {
         super();
         this.stage = stage;
         //stage.setMaximized(true);
@@ -66,14 +65,14 @@ public class ContenedorBloques extends VBox {
 
         Button botonBloqueBajarLapiz = new BotonBloque("Bajar Lapiz", 185, 70, 185, 70,
                 Color.web("00adbc"), Color.web("036a73"), new Image("vista/imagenes/LapizAbajo.png"));
-        botonBloqueDerecha.setOnAction(new BotonBloqueDireccionEventHandler(stage, sectorAlgoritmo, sectorDibujo, Direccion.derecha()));
-        botonBloqueDerecha.setDefaultButton(true);
+        botonBloqueBajarLapiz.setOnAction(new BotonModificarLapizEventHandle(stage, sectorAlgoritmo, sectorDibujo, new BloqueBajarLapiz()));
+        botonBloqueBajarLapiz.setDefaultButton(true);
         botones.add(botonBloqueBajarLapiz);
 
         Button botonBloqueSubirLapiz = new BotonBloque("Subir Lapiz", 185, 70, 185, 70,
                 Color.web("00adbc"), Color.web("036a73"), new Image("vista/imagenes/LapizLevantado.png"));
-        botonBloqueDerecha.setOnAction(new BotonBloqueDireccionEventHandler(stage, sectorAlgoritmo, sectorDibujo, Direccion.derecha()));
-        botonBloqueDerecha.setDefaultButton(true);
+        botonBloqueSubirLapiz.setOnAction(new BotonModificarLapizEventHandle(stage, sectorAlgoritmo, sectorDibujo, new BloqueLevantarLapiz()));
+        botonBloqueSubirLapiz.setDefaultButton(true);
         botones.add(botonBloqueSubirLapiz);
 
 
@@ -97,12 +96,14 @@ public class ContenedorBloques extends VBox {
 
         Button botonFree = new BotonBloque("Free", 185, 70, 185, 70, Color.web("ef5ca3"),
                 Color.web("ae3e74"), new Image("vista/imagenes/Repetir.png"));
+
         botonFree.setOnAction(new BotonFreeEventHandler(stage));
         botonFree.setDefaultButton(true);
         botones.add(botonFree);
 
         Button botonLimpiar = new BotonBloque("Reiniciar", 185, 70, 185, 70, Color.web("7665a0"),
-                Color.web("645880"), new Image("vista/imagenes/Limpiar.png"));
+
+        Color.web("645880"), new Image("vista/imagenes/Limpiar.png"));
         botonLimpiar.setOnAction(new BotonLimpiarEventHandler(stage));
         botonLimpiar.setDefaultButton(true);
         botones.add(botonLimpiar);

@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.modelo.linea;
 
 import edu.fiuba.algo3.modelo.Posicion;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 
 public abstract class Linea {
     private Posicion posicionInicial;
@@ -32,4 +34,13 @@ public abstract class Linea {
     }
 
     public abstract boolean colocar();
+
+    public Line vista(){
+        Line line = new Line();
+        line.setStartX(this.getPosicionInicial().getPosicionX());
+        line.setStartY(-this.getPosicionInicial().getPosicionY());
+        line.setEndX(this.getPosicionFinal().getPosicionX());
+        line.setEndY(-this.getPosicionFinal().getPosicionY());
+        return line;
+    }
 }
