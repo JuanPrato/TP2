@@ -14,9 +14,6 @@ public class SectorAlgoritmo extends ContenedorDeBloques {
         super();
     }
 
-    /*public void addBloque(IBloque bloque){
-       bloques.add(bloque);
-    }*/
 
     public void ejecutarAlgoritmo(SectorDibujo sectorDibujo) {
         this.bloquesAcoplados.forEach(bloque -> {
