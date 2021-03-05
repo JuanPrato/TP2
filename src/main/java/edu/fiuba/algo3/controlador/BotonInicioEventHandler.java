@@ -19,6 +19,6 @@ public class BotonInicioEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        stage.setScene( new Scene(new ContenedorVentana(stage, SectorAlgoritmo.getInstance(), SectorDibujo.getInstance())));
+        stage.setScene(new Scene(new ContenedorVentana(stage, SectorAlgoritmo.getInstance(), SectorDibujo.getInstance()),1700,800));
     }
 }

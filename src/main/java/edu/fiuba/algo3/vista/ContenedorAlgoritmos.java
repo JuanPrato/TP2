@@ -26,11 +26,9 @@ public class ContenedorAlgoritmos extends VBox {
         super();
         this.stage = stage;
 
-        //stage.setMaximized(true);
-        this.setPadding(new Insets(400,330,400,400));
-
+        stage.setMaximized(true);
+        this.setPadding(new Insets(500,700,700,500));
         this.setPadding(new Insets (0,600,600,0));
-
         this.setBackground(new Background(new BackgroundFill(Color.web("#a29bfe"), CornerRadii.EMPTY, Insets.EMPTY)));
 
         Text titulo = new Text("Espacio de trabajo");

@@ -30,9 +30,11 @@ public class ContenedorTablero extends VBox {
         this.sectorDibujo = sectorDibujo;
         this.setAlignment(Pos.TOP_LEFT);
         this.setPadding(new Insets(100,100,100,100));
-        this.setBackground(new Background(new BackgroundFill(Color.web("#00f"), CornerRadii.EMPTY, Insets.EMPTY)));
+        this.setBackground(new Background(new BackgroundFill(Color.web("ffffff"),CornerRadii.EMPTY,Insets.EMPTY)));
+        this.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
         this.setSpacing(5);
         Rectangle b = new Rectangle(15,15);
+        b.setFill(Color.web("504234"));
         setPosicionDelPersonaje(b, sectorDibujo.getPersonaje().getPosicion());
         this.getChildren().addAll(b);
     }
