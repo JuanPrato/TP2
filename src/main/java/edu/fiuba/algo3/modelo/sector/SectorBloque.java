@@ -1,9 +1,8 @@
 package edu.fiuba.algo3.modelo.sector;
 
-import edu.fiuba.algo3.modelo.bloque.IBloque;
-import edu.fiuba.algo3.modelo.bloque.BloqueAcoplado;
+import edu.fiuba.algo3.modelo.bloque.ContenedorDeBloques;
 
-public class SectorBloque extends BloqueAcoplado {
+public class SectorBloque extends ContenedorDeBloques {
 
     public SectorBloque () {}
 

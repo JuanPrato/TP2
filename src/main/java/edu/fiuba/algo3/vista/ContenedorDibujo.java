@@ -1,14 +1,13 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.controlador.BotonSalirEventHandler;
-import edu.fiuba.algo3.modelo.bloque.BloqueAcoplado;
+import edu.fiuba.algo3.modelo.bloque.ContenedorDeBloques;
 import edu.fiuba.algo3.modelo.sector.SectorAlgoritmo;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -17,7 +16,7 @@ import javafx.stage.Stage;
 public class ContenedorDibujo extends VBox {
     private Stage stage;
 
-    public ContenedorDibujo(Stage stage, SectorDibujo sectorDibujo, BloqueAcoplado sectorAlgoritmo) {
+    public ContenedorDibujo(Stage stage, SectorDibujo sectorDibujo, ContenedorDeBloques sectorAlgoritmo) {
         super();
         this.stage = stage;
         //stage.setMaximized(true);

@@ -17,8 +17,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+
+import java.util.List;
 
 public class ContenedorTablero extends VBox {
     private Stage stage;
@@ -30,11 +33,15 @@ public class ContenedorTablero extends VBox {
         this.sectorDibujo = sectorDibujo;
         this.setAlignment(Pos.TOP_LEFT);
         this.setPadding(new Insets(100,100,100,100));
+        this.maxHeight(100);
+        this.maxWidth(100);
         this.setBackground(new Background(new BackgroundFill(Color.web("#00f"), CornerRadii.EMPTY, Insets.EMPTY)));
         this.setSpacing(5);
         Rectangle b = new Rectangle(15,15);
+        List<Line> lines = this.sectorDibujo.recorrido();
         setPosicionDelPersonaje(b, sectorDibujo.getPersonaje().getPosicion());
         this.getChildren().addAll(b);
+        this.getChildren().addAll(lines);
     }
 
     private void setPosicionDelPersonaje(Rectangle b, Posicion posicion){
