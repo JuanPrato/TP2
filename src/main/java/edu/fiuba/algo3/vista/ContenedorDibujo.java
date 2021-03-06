@@ -38,10 +38,10 @@ public class ContenedorDibujo extends VBox {
         //contenedorPersonaje.dibujarLinea(new Posicion(25,25),new Posicion(35,26));
 
         Label fondoTablero = new Label();
-        fondoTablero.setGraphic(new ImageView(new Image ("vista/imagenes/fondoParaDibujar.png")));
+        fondoTablero.setGraphic(new ImageView(new Image ("src/main/java/edu/fiuba/algo3/vista/imagenes/fondoParaDibujar.png")));
 
         Label personaje = new Label();
-        personaje.setGraphic(new ImageView(new Image("vista/imagenes/PersonajePrin.png")));
+        personaje.setGraphic(new ImageView(new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/DibujarAbajo.png")));
         personaje.getTransforms().add(new Translate(5,5));
 
         tablero.getChildren().addAll(fondoTablero, contenedorPersonaje, personaje);

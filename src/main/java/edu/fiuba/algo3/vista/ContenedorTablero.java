@@ -29,10 +29,11 @@ public class ContenedorTablero extends GridPane {
 
     public void dibujarTodasLineas(){
         List<Linea> recorrido = this.sectorDibujo.getTablero().getRecorrido();
-        for (Linea linea: recorrido
-             ) {
-            dibujarLinea(linea.getPosicionInicial(), linea.getPosicionFinal());
-        }
+        recorrido.forEach(linea->{
+            if(linea.colocar()){
+                dibujarLinea(linea.getPosicionInicial(), linea.getPosicionFinal());
+            }
+        });
     }
 
     public void dibujarLinea(Posicion posInicial, Posicion posFinal){

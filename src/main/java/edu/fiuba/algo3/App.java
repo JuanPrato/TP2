@@ -18,12 +18,9 @@ public class App extends Application {
     public void start(Stage stage) {
         Scene escenaInicio = new Scene(new ContenedorInicio(stage), 500,700);
 
-        //personaje.setTranslateX(posicion.getPosicionX());
-        //personaje.setTranslateY(posicion.getPosicionY());
-
         stage.setTitle("AlgoBlocks");
         stage.setScene(escenaInicio);
-        //stage.getIcons().add(new Image("vista/imagenes/LapizLevantado.png"));
+        stage.getIcons().add(new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/LapizAbajo.png"));
         stage.show();
     }
 
