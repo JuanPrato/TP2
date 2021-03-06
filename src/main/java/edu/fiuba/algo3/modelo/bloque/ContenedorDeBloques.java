@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo.bloque;
 
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -24,12 +25,12 @@ public abstract class ContenedorDeBloques {
         return bloquesAcoplados;
     }
 
-    public List<VBox> vistasBloques(Stage stage){
+    public List<Label> vistasBloques(Stage stage){
         System.out.println(bloquesAcoplados.size());
-        List<VBox> boxes = new ArrayList<>();
+        List<Label> bloques = new ArrayList<>();
         bloquesAcoplados.forEach(bloque -> {
-            boxes.add(bloque.vista(stage));
+            bloques.add(bloque.vista(stage));
         });
-        return boxes;
+        return bloques;
     }
 }

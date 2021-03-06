@@ -40,25 +40,25 @@ public class ContenedorBloques extends VBox {
         titulo.setFill(Color.web("7665a0"));
 
         Button botonBloqueArriba = new BotonBloque("Arriba", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueArriba.png"));
+                Color.web("00adbc"), Color.web("036a73"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueARRIBA.png"));
         botonBloqueArriba.setOnAction(new BotonBloqueDireccionEventHandler(stage, sectorAlgoritmo, sectorDibujo, Direccion.arriba()));
         botonBloqueArriba.setDefaultButton(true);
         botones.add(botonBloqueArriba);
 
         Button botonBloqueAbajo = new BotonBloque("Abajo", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueAbajo.png"));
+                Color.web("00adbc"), Color.web("036a73"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueABAJO.png"));
         botonBloqueAbajo.setOnAction(new BotonBloqueDireccionEventHandler(stage, sectorAlgoritmo, sectorDibujo, Direccion.abajo()));
         botonBloqueAbajo.setDefaultButton(true);
         botones.add(botonBloqueAbajo);
 
         Button botonBloqueIzquierda = new BotonBloque("Izquierda", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueIzquierda.png"));
+                Color.web("00adbc"), Color.web("036a73"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueIZQUIERDA.png"));
         botonBloqueIzquierda.setOnAction(new BotonBloqueDireccionEventHandler(stage, sectorAlgoritmo, sectorDibujo, Direccion.izquierda()));
         botonBloqueIzquierda.setDefaultButton(true);
         botones.add(botonBloqueIzquierda);
 
         Button botonBloqueDerecha = new BotonBloque("Derecha", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueDerecha.png"));
+                Color.web("00adbc"), Color.web("036a73"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueDERECHA.png"));
         botonBloqueDerecha.setOnAction(new BotonBloqueDireccionEventHandler(stage, sectorAlgoritmo, sectorDibujo, Direccion.derecha()));
         botonBloqueDerecha.setDefaultButton(true);
         botones.add(botonBloqueDerecha);

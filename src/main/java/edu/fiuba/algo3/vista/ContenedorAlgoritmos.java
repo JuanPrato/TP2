@@ -2,6 +2,7 @@ package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.bloque.ContenedorDeBloques;
 import javafx.geometry.Insets;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -30,7 +31,7 @@ public class ContenedorAlgoritmos extends VBox {
         titulo.setFont(Font.font("Calibri", FontWeight.BOLD,20));
         titulo.setFill(Color.web("7665a0"));
 
-        List<VBox> bloques = sectorAlgoritmo.vistasBloques(stage);
+        List<Label> bloques = sectorAlgoritmo.vistasBloques(stage);
         this.getChildren().addAll(titulo);
         this.getChildren().addAll(bloques);
     }
