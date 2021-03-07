@@ -21,5 +21,6 @@ public class BotonInicioEventHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
         stage.setScene(SceneUtil.getScene(stage, SectorAlgoritmo.getInstance(), SectorDibujo.getInstance()));
+        stage.setMaximized(true);
     }
 }

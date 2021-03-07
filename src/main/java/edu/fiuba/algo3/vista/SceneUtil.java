@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 public class SceneUtil {
 
     static public Scene getScene(Stage stage, ContenedorDeBloques sectorAlgoritmo, SectorDibujo sectorDibujo){
-        return new Scene(new ContenedorVentana(stage, sectorAlgoritmo, sectorDibujo), 1700,1000);
+        return new Scene(new ContenedorVentana(stage, sectorAlgoritmo, sectorDibujo), 1920,1080);
     }
 
 }

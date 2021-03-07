@@ -13,12 +13,12 @@ public class Posicion {
     }
 
     public Posicion(int x, int y) {
-        posicionX = x;
-        posicionY = y;
+        this.posicionX = x;
+        this.posicionY = y;
     }
 
     public int getPosicionX() {
-        return Math.abs(posicionX) == 110 ? (int)Math.signum(posicionX) * 100 : posicionX;
+        return this.posicionX;
     }
 
     public void setPosicionX(int posicionX) {
@@ -26,7 +26,7 @@ public class Posicion {
     }
 
     public int getPosicionY() {
-        return Math.abs(posicionY) == 110 ? (int)Math.signum(posicionY) * 100 : posicionY;
+        return this.posicionY;
     }
 
     public void setPosicionY(int posicionY) {

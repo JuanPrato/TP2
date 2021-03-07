@@ -20,13 +20,8 @@ public class App extends Application {
 
         stage.setTitle("AlgoBlocks");
         stage.setScene(escenaInicio);
-
-        stage.getIcons().add(new Image("file:LapizLevantado.png"));
-        //stage.setResizable(false);
+        stage.getIcons().add(new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/LapizAbajo.png"));
         stage.show();
-
-        //StackPane layout = new StackPane();
-        //Scene scene = new Scene(layout, 640, 480);
     }
 
     public static void main(String[] args) {

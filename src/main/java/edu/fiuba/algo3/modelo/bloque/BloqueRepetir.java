@@ -4,6 +4,9 @@ import edu.fiuba.algo3.controlador.BloqueAcopladoHandler;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -34,8 +37,8 @@ public class BloqueRepetir extends ContenedorDeBloques implements IBloque {
     }
 
     @Override
-    public VBox vista(Stage stage) {
-        VBox rec = new VBox();
+    public Label vista(Stage stage) {
+        /*VBox rec = new VBox();
         Button b = new Button(String.format("REPETIR %s", nRepeticiones));
         List<VBox> boxs = this.vistasBloques(stage);
         for (VBox box: boxs){
@@ -44,6 +47,11 @@ public class BloqueRepetir extends ContenedorDeBloques implements IBloque {
         b.setOnAction(new BloqueAcopladoHandler(this, stage));
         rec.getChildren().add(b);
         rec.getChildren().addAll(boxs);
-        return rec;
+        return rec;*/
+        Label bloque = new Label();
+        bloque.setGraphic(new ImageView
+                (new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/RepetirX"+Integer.toString(nRepeticiones)+".png"))
+        );
+        return bloque;
     }
 }
