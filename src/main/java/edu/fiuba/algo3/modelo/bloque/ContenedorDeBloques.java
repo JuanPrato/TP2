@@ -25,12 +25,13 @@ public abstract class ContenedorDeBloques {
         return bloquesAcoplados;
     }
 
-    public List<Label> vistasBloques(Stage stage){
+    public List<VBox> vistasBloques(Stage stage){
         System.out.println(bloquesAcoplados.size());
-        List<Label> bloques = new ArrayList<>();
+        List<VBox> bloques = new ArrayList<>();
         bloquesAcoplados.forEach(bloque -> {
             bloques.add(bloque.vista(stage));
         });
         return bloques;
     }
+
 }

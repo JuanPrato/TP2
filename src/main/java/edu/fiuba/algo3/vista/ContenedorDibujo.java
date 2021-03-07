@@ -23,7 +23,7 @@ import javafx.stage.Stage;
 public class ContenedorDibujo extends VBox {
     private Stage stage;
 
-    public ContenedorDibujo(Stage stage, SectorDibujo sectorDibujo, ContenedorDeBloques sectorAlgoritmo) {
+    public ContenedorDibujo(Stage stage, SectorDibujo sectorDibujo, SectorAlgoritmo sectorAlgoritmo) {
         super();
         this.stage = stage;
         //stage.setMaximized(true);
@@ -38,10 +38,10 @@ public class ContenedorDibujo extends VBox {
         //contenedorPersonaje.dibujarLinea(new Posicion(25,25),new Posicion(35,26));
 
         Label fondoTablero = new Label();
-        fondoTablero.setGraphic(new ImageView(new Image ("src/main/java/edu/fiuba/algo3/vista/imagenes/fondoParaDibujar.png")));
+        fondoTablero.setGraphic(new ImageView(new Image ("file:src/main/java/edu/fiuba/algo3/vista/imagenes/fondoParaDibujar.png")));
 
         Label personaje = new Label();
-        personaje.setGraphic(new ImageView(new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/DibujarAbajo.png")));
+        personaje.setGraphic(new ImageView(new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/DibujarAbajo.png")));
         personaje.getTransforms().add(new Translate(5,5));
 
         tablero.getChildren().addAll(fondoTablero, contenedorPersonaje, personaje);
@@ -52,7 +52,7 @@ public class ContenedorDibujo extends VBox {
             public void handle(ActionEvent actionEvent) {
                 SectorAlgoritmo.getInstance().ejecutarAlgoritmo(sectorDibujo);
                 contenedorPersonaje.dibujarTodasLineas();
-                stage.setScene(SceneUtil.getScene(stage, sectorAlgoritmo, sectorDibujo));
+                stage.setScene(SceneUtil.getScene(stage, SectorAlgoritmo.getInstance(), sectorDibujo, sectorAlgoritmo));
             }
         });
         botonEjecutar.setDefaultButton(true);

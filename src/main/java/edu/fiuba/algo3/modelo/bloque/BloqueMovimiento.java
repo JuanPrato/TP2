@@ -31,15 +31,13 @@ public class BloqueMovimiento implements IBloque {
     }
 
     @Override
-    public Label vista(Stage stage) {
-        /*VBox box = new VBox();
-        Button b = new Button(direccion.direccionToString());
-        box.getChildren().add(b);
-        return box;*/
+    public VBox vista(Stage stage) {
+        VBox box = new VBox();
         Label bloque = new Label();
         bloque.setGraphic(new ImageView
                 (new Image
-                        ("src/main/java/edu/fiuba/algo3/vista/imagenes/Bloque"+this.direccion.direccionToString()+".png")));
-        return bloque;
+                        ("file:src/main/java/edu/fiuba/algo3/vista/imagenes/Bloque"+this.direccion.direccionToString()+".png")));
+        box.getChildren().add(bloque);
+        return box;
     }
 }

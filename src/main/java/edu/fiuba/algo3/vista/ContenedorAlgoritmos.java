@@ -31,7 +31,7 @@ public class ContenedorAlgoritmos extends VBox {
         titulo.setFont(Font.font("Calibri", FontWeight.BOLD,20));
         titulo.setFill(Color.web("7665a0"));
 
-        List<Label> bloques = sectorAlgoritmo.vistasBloques(stage);
+        List<VBox> bloques = sectorAlgoritmo.vistasBloques(stage);
         this.getChildren().addAll(titulo);
         this.getChildren().addAll(bloques);
     }

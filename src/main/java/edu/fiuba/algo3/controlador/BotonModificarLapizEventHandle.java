@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.controlador;
 
 import edu.fiuba.algo3.modelo.bloque.*;
+import edu.fiuba.algo3.modelo.sector.SectorAlgoritmo;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import edu.fiuba.algo3.vista.SceneUtil;
 import javafx.event.ActionEvent;
@@ -24,6 +25,6 @@ public class BotonModificarLapizEventHandle implements EventHandler<ActionEvent>
     @Override
     public void handle(ActionEvent actionEvent) {
         sectorAlgoritmo.agregarBloque(bloqueBajarLapiz);
-        stage.setScene(SceneUtil.getScene(stage, sectorAlgoritmo, sectorDibujo));
+        stage.setScene(SceneUtil.getScene(stage, SectorAlgoritmo.getInstance(), sectorDibujo, sectorAlgoritmo));
     }
 }

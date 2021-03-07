@@ -12,10 +12,11 @@ public interface IBloque {
 
     void invertir();
 
-    default Label vista(Stage stage){
-        //VBox box = new VBox(100);
+    default VBox vista(Stage stage){
+        VBox box = new VBox(100);
         //Button b = new Button("BLOCK");
-        //box.getChildren().add(b);
-        return new Label();
+        Label b = new Label();
+        box.getChildren().add(b);
+        return box;
     }
 }
