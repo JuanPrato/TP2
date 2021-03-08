@@ -25,13 +25,16 @@ public abstract class ContenedorDeBloques {
         return bloquesAcoplados;
     }
 
-    public List<VBox> vistasBloques(Stage stage){
+    public List<VBox> vistasBloques(Stage stage, ContenedorDeBloques contenedorActual){
         System.out.println(bloquesAcoplados.size());
         List<VBox> bloques = new ArrayList<>();
         bloquesAcoplados.forEach(bloque -> {
-            bloques.add(bloque.vista(stage));
+            bloques.add(bloque.vista(stage, contenedorActual));
         });
         return bloques;
     }
 
+    public void removerUltimo(){
+        bloquesAcoplados.remove(bloquesAcoplados.size()-1);
+    };
 }

@@ -3,6 +3,7 @@ package edu.fiuba.algo3.vista;
 import edu.fiuba.algo3.controlador.*;
 import edu.fiuba.algo3.modelo.bloque.*;
 import edu.fiuba.algo3.modelo.direccion.Direccion;
+import edu.fiuba.algo3.modelo.sector.SectorAlgoritmo;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -21,7 +22,7 @@ import java.util.List;
 public class ContenedorBloques extends VBox {
     private Stage stage;
 
-    public ContenedorBloques(Stage stage, ContenedorDeBloques sectorAlgoritmo, SectorDibujo sectorDibujo, ContenedorDeBloques contenedorActual) {
+    public ContenedorBloques(Stage stage, SectorAlgoritmo sectorAlgoritmo, SectorDibujo sectorDibujo, ContenedorDeBloques contenedorActual) {
         super();
         this.stage = stage;
         //stage.setMaximized(true);
@@ -73,20 +74,20 @@ public class ContenedorBloques extends VBox {
         botones.add(botonBloqueSubirLapiz);
 
 
-        Button botonBloqueRepetir = new BotonBloque("RepetirX2", 185, 70, 185, 70, Color.web("ef5ca3"),
+        Button botonBloqueRepetir = new BotonBloque("X2", 185, 70, 185, 70, Color.web("ef5ca3"),
                 Color.web("ae3e74"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/Repetir.png"));
         botonBloqueRepetir.setOnAction(new BotonBloqueEventHandler(stage, contenedorActual, sectorDibujo, new BloqueRepetir(2)));
         botonBloqueRepetir.setDefaultButton(true);
         botones.add(botonBloqueRepetir);
 
-        Button botonBloqueRepetir3 = new BotonBloque("RepetirX3", 185, 70, 185, 70, Color.web("ef5ca3"),
+        Button botonBloqueRepetir3 = new BotonBloque("X3", 185, 70, 185, 70, Color.web("ef5ca3"),
                 Color.web("ae3e74"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/Repetir.png"));
         botonBloqueRepetir3.setOnAction(new BotonBloqueEventHandler(stage, contenedorActual, sectorDibujo, new BloqueRepetir(3)));
         botonBloqueRepetir3.setDefaultButton(true);
         botones.add(botonBloqueRepetir3);
 
-        Button botonInvertir = new BotonBloque("Invertir", 185, 70, 185, 70, Color.web("fcdd2a"),
-                Color.web("d6be30"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/Invertir.png"));
+        Button botonInvertir = new BotonBloque("Invertir", 185, 70, 185, 70, Color.web("ef5ca3"),
+                Color.web("ae3e74"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/Invertir.png"));
         botonInvertir.setOnAction(new BotonBloqueEventHandler(stage, contenedorActual, sectorDibujo, new BloqueInvertir()));
         botonInvertir.setDefaultButton(true);
         botones.add(botonInvertir);
@@ -101,8 +102,9 @@ public class ContenedorBloques extends VBox {
         botonSave.setOnAction(new BotonSaveEventHandler());
         botonesPersonalizado.getChildren().addAll(botonPersonalizado, botonSave);
 
-        Button botonFree = new BotonBloque("Bloquear\nRepetir", 185, 70, 185, 70, Color.web("ef5ca3"),
-                Color.web("ae3e74"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/RepetirBloquear.png"));
+        Button botonFree = new BotonBloque("Salir del\ncontenedor", 185, 70, 185, 70, Color.web("ef5ca3"),
+                Color.web("ae3e74"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/ambasTachadas.png"));
+        botonFree.setFont(Font.font("Calibri", FontWeight.BOLD,15));
         botonFree.setOnAction(new BotonFreeEventHandler(stage));
         botonFree.setDefaultButton(true);
         botones.add(botonFree);
