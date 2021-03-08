@@ -33,16 +33,15 @@ public class ContenedorDibujo extends VBox {
         this.setSpacing(5);
 
         StackPane tablero = new StackPane();
-        ContenedorTablero contenedorPersonaje = new ContenedorTablero(sectorDibujo);
+        ContenedorTablero contenedorPersonaje = ContenedorTablero.getInstance();
 
         //contenedorPersonaje.dibujarLinea(new Posicion(25,25),new Posicion(35,26));
 
         Label fondoTablero = new Label();
         fondoTablero.setGraphic(new ImageView(new Image ("file:src/main/java/edu/fiuba/algo3/vista/imagenes/fondoParaDibujar.png")));
 
-        Label personaje = new Label();
+        Label personaje = sectorDibujo.getPersonaje().vista();
         personaje.setGraphic(new ImageView(new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/DibujarAbajo.png")));
-        personaje.getTransforms().add(new Translate(5,5));
 
         tablero.getChildren().addAll(fondoTablero, contenedorPersonaje, personaje);
 
@@ -53,6 +52,7 @@ public class ContenedorDibujo extends VBox {
                 SectorAlgoritmo.getInstance().ejecutarAlgoritmo(sectorDibujo);
                 contenedorPersonaje.dibujarTodasLineas();
                 stage.setScene(SceneUtil.getScene(stage, SectorAlgoritmo.getInstance(), sectorDibujo, sectorAlgoritmo));
+                System.out.println();
             }
         });
         botonEjecutar.setDefaultButton(true);

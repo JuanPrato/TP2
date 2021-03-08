@@ -3,6 +3,10 @@ package edu.fiuba.algo3.modelo;
 import edu.fiuba.algo3.modelo.direccion.Direccion;
 import edu.fiuba.algo3.modelo.lapiz.Lapiz;
 import edu.fiuba.algo3.modelo.linea.Linea;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.transform.Translate;
 
 public class Personaje {
 
@@ -37,5 +41,12 @@ public class Personaje {
 
     public void bajarLapiz(){
         lapiz.bajarLapiz();
+    }
+
+    public Label vista() {
+        Label personaje = new Label();
+        personaje.setGraphic(new ImageView(new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/DibujarAbajo.png")));
+        personaje.getTransforms().add(new Translate(posicion.getPosicionX(),posicion.getPosicionY()));
+        return personaje;
     }
 }
