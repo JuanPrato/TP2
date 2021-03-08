@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.bloque.ContenedorDeBloques;
+import edu.fiuba.algo3.modelo.sector.SectorAlgoritmo;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.geometry.Insets;
 import javafx.scene.control.ScrollPane;
@@ -11,7 +12,7 @@ import javafx.stage.Stage;
 public class ContenedorVentana extends HBox {
     private Stage stage;
 
-    public ContenedorVentana(Stage stage, ContenedorDeBloques sectorAlgoritmo, SectorDibujo sectorDibujo) {
+    public ContenedorVentana(Stage stage, SectorAlgoritmo sectorAlgoritmo, SectorDibujo sectorDibujo, ContenedorDeBloques contenedorActual) {
         super();
         this.stage = stage;
         //stage.setResizable(true);
@@ -25,7 +26,7 @@ public class ContenedorVentana extends HBox {
 
         VBox contenedorDibujo = new ContenedorDibujo(stage, sectorDibujo, sectorAlgoritmo);
 
-        VBox contenedorBloques = new ContenedorBloques(stage, sectorAlgoritmo, sectorDibujo);
+        VBox contenedorBloques = new ContenedorBloques(stage, sectorAlgoritmo, sectorDibujo, contenedorActual);
 
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setFitToWidth(false);

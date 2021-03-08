@@ -1,9 +1,6 @@
 package edu.fiuba.algo3.vista;
 
-import edu.fiuba.algo3.controlador.BotonModificarLapizEventHandle;
-import edu.fiuba.algo3.controlador.BotonBloqueDireccionEventHandler;
-import edu.fiuba.algo3.controlador.BotonBloqueEventHandler;
-import edu.fiuba.algo3.controlador.BotonLimpiarEventHandler;
+import edu.fiuba.algo3.controlador.*;
 import edu.fiuba.algo3.modelo.bloque.*;
 import edu.fiuba.algo3.modelo.direccion.Direccion;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
@@ -24,7 +21,7 @@ import java.util.List;
 public class ContenedorBloques extends VBox {
     private Stage stage;
 
-    public ContenedorBloques(Stage stage, ContenedorDeBloques sectorAlgoritmo, SectorDibujo sectorDibujo) {
+    public ContenedorBloques(Stage stage, ContenedorDeBloques sectorAlgoritmo, SectorDibujo sectorDibujo, ContenedorDeBloques contenedorActual) {
         super();
         this.stage = stage;
         //stage.setMaximized(true);
@@ -40,73 +37,83 @@ public class ContenedorBloques extends VBox {
         titulo.setFill(Color.web("7665a0"));
 
         Button botonBloqueArriba = new BotonBloque("Arriba", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueARRIBA.png"));
-        botonBloqueArriba.setOnAction(new BotonBloqueDireccionEventHandler(stage, sectorAlgoritmo, sectorDibujo, Direccion.arriba()));
+                Color.web("00adbc"), Color.web("036a73"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueArriba.png"));
+        botonBloqueArriba.setOnAction(new BotonBloqueDireccionEventHandler(stage, contenedorActual, sectorDibujo, Direccion.arriba()));
         botonBloqueArriba.setDefaultButton(true);
         botones.add(botonBloqueArriba);
 
         Button botonBloqueAbajo = new BotonBloque("Abajo", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueABAJO.png"));
-        botonBloqueAbajo.setOnAction(new BotonBloqueDireccionEventHandler(stage, sectorAlgoritmo, sectorDibujo, Direccion.abajo()));
+                Color.web("00adbc"), Color.web("036a73"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueAbajo.png"));
+        botonBloqueAbajo.setOnAction(new BotonBloqueDireccionEventHandler(stage, contenedorActual, sectorDibujo, Direccion.abajo()));
         botonBloqueAbajo.setDefaultButton(true);
         botones.add(botonBloqueAbajo);
 
-        Button botonBloqueIzquierda = new BotonBloque("Izquierda", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueIZQUIERDA.png"));
-        botonBloqueIzquierda.setOnAction(new BotonBloqueDireccionEventHandler(stage, sectorAlgoritmo, sectorDibujo, Direccion.izquierda()));
+        Button botonBloqueIzquierda = new BotonBloque("Izq.", 185, 70, 185, 70,
+                Color.web("00adbc"), Color.web("036a73"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueIzquierda.png"));
+        botonBloqueIzquierda.setOnAction(new BotonBloqueDireccionEventHandler(stage, contenedorActual, sectorDibujo, Direccion.izquierda()));
         botonBloqueIzquierda.setDefaultButton(true);
         botones.add(botonBloqueIzquierda);
 
         Button botonBloqueDerecha = new BotonBloque("Derecha", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueDERECHA.png"));
-        botonBloqueDerecha.setOnAction(new BotonBloqueDireccionEventHandler(stage, sectorAlgoritmo, sectorDibujo, Direccion.derecha()));
+                Color.web("00adbc"), Color.web("036a73"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueDerecha.png"));
+        botonBloqueDerecha.setOnAction(new BotonBloqueDireccionEventHandler(stage, contenedorActual, sectorDibujo, Direccion.derecha()));
         botonBloqueDerecha.setDefaultButton(true);
         botones.add(botonBloqueDerecha);
 
         Button botonBloqueBajarLapiz = new BotonBloque("Bajar Lapiz", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/LapizAbajo.png"));
-        botonBloqueBajarLapiz.setOnAction(new BotonModificarLapizEventHandle(stage, sectorAlgoritmo, sectorDibujo, new BloqueBajarLapiz()));
+                Color.web("00adbc"), Color.web("036a73"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/LapizAbajo.png"));
+        botonBloqueBajarLapiz.setOnAction(new BotonModificarLapizEventHandle(stage, contenedorActual, sectorDibujo, new BloqueBajarLapiz()));
         botonBloqueBajarLapiz.setDefaultButton(true);
         botones.add(botonBloqueBajarLapiz);
 
         Button botonBloqueSubirLapiz = new BotonBloque("Subir Lapiz", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/LapizLevantado.png"));
-        botonBloqueSubirLapiz.setOnAction(new BotonModificarLapizEventHandle(stage, sectorAlgoritmo, sectorDibujo, new BloqueLevantarLapiz()));
+                Color.web("00adbc"), Color.web("036a73"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/LapizLevantado.png"));
+        botonBloqueSubirLapiz.setOnAction(new BotonModificarLapizEventHandle(stage, contenedorActual    , sectorDibujo, new BloqueLevantarLapiz()));
         botonBloqueSubirLapiz.setDefaultButton(true);
         botones.add(botonBloqueSubirLapiz);
 
 
         Button botonBloqueRepetir = new BotonBloque("RepetirX2", 185, 70, 185, 70, Color.web("ef5ca3"),
-                Color.web("ae3e74"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/Repetir.png"));
-        botonBloqueRepetir.setOnAction(new BotonBloqueEventHandler(stage, sectorAlgoritmo, sectorDibujo, new BloqueRepetir(2)));
+                Color.web("ae3e74"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/Repetir.png"));
+        botonBloqueRepetir.setOnAction(new BotonBloqueEventHandler(stage, contenedorActual, sectorDibujo, new BloqueRepetir(2)));
         botonBloqueRepetir.setDefaultButton(true);
         botones.add(botonBloqueRepetir);
 
         Button botonBloqueRepetir3 = new BotonBloque("RepetirX3", 185, 70, 185, 70, Color.web("ef5ca3"),
-                Color.web("ae3e74"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/Repetir.png"));
-        botonBloqueRepetir3.setOnAction(new BotonBloqueEventHandler(stage, sectorAlgoritmo, sectorDibujo, new BloqueRepetir(3)));
+                Color.web("ae3e74"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/Repetir.png"));
+        botonBloqueRepetir3.setOnAction(new BotonBloqueEventHandler(stage, contenedorActual, sectorDibujo, new BloqueRepetir(3)));
         botonBloqueRepetir3.setDefaultButton(true);
         botones.add(botonBloqueRepetir3);
 
-        Button botonInvertir = new BotonBloque("Invertir", 185, 70, 185, 70, Color.web("ef5ca3"),
-                Color.web("ae3e74"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/Invertir.png"));
-        botonInvertir.setOnAction(new BotonBloqueEventHandler(stage, sectorAlgoritmo, sectorDibujo, new BloqueInvertir()));
+        Button botonInvertir = new BotonBloque("Invertir", 185, 70, 185, 70, Color.web("fcdd2a"),
+                Color.web("d6be30"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/Invertir.png"));
+        botonInvertir.setOnAction(new BotonBloqueEventHandler(stage, contenedorActual, sectorDibujo, new BloqueInvertir()));
         botonInvertir.setDefaultButton(true);
         botones.add(botonInvertir);
 
-        Button botonFree = new BotonBloque("BLoquear\nRepetir", 185, 70, 185, 70, Color.web("ef5ca3"),
-                Color.web("ae3e74"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/RepetirBloquear.png"));
+        HBox botonesPersonalizado = new HBox();
+        Button botonPersonalizado = new BotonBloque("Personalizado", 185, 70, 185, 70, Color.web("ef5ca3"),
+                Color.web("ae3e74"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/RepetirBloquear.png"));
+        botonPersonalizado.setOnAction(new BotonBloqueEventHandler(stage, contenedorActual, sectorDibujo, BloquePersonalizado.getInstance()));
+
+        Button botonSave = new BotonBloque("Guardar", 185, 70, 185, 70, Color.web("ef5ca3"),
+                Color.web("ae3e74"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/RepetirBloquear.png"));
+        botonSave.setOnAction(new BotonSaveEventHandler());
+        botonesPersonalizado.getChildren().addAll(botonPersonalizado, botonSave);
+
+        Button botonFree = new BotonBloque("Bloquear\nRepetir", 185, 70, 185, 70, Color.web("ef5ca3"),
+                Color.web("ae3e74"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/RepetirBloquear.png"));
         botonFree.setOnAction(new BotonFreeEventHandler(stage));
         botonFree.setDefaultButton(true);
         botones.add(botonFree);
 
         Button botonLimpiar = new BotonBloque("Reiniciar", 185, 70, 185, 70, Color.web("7665a0"),
-        Color.web("645880"), new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/Limpiar.png"));
+        Color.web("645880"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/Limpiar.png"));
         botonLimpiar.setOnAction(new BotonLimpiarEventHandler(stage));
         botonLimpiar.setDefaultButton(true);
         botones.add(botonLimpiar);
 
-        this.getChildren().addAll(titulo);
+        this.getChildren().addAll(titulo, botonesPersonalizado);
         this.getChildren().addAll(botones);
 
     }

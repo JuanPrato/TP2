@@ -12,10 +12,10 @@ public class Direccion {
 
 
     static {
-        arriba = new Direccion(0, -1, "ARRIBA");
-        abajo = new Direccion(0, 1, "ABAJO");
-        derecha = new Direccion(1, 0, "DERECHA");
-        izquierda = new Direccion(-1, 0, "IZQUIERDA");
+        arriba = new Direccion(0, -1, "Arriba");
+        abajo = new Direccion(0, 1, "Abajo");
+        derecha = new Direccion(1, 0, "Derecha");
+        izquierda = new Direccion(-1, 0, "Izquierda");
 
         arriba.setInversa(abajo);
         abajo.setInversa(arriba);

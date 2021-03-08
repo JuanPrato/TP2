@@ -20,6 +20,6 @@ public class BotonLimpiarEventHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
         SectorAlgoritmo.getInstance().reiniciarJuego(SectorDibujo.getInstance());
-        stage.setScene(SceneUtil.getScene(stage, SectorAlgoritmo.getInstance(), SectorDibujo.getInstance()));
+        stage.setScene(SceneUtil.getScene(stage, SectorAlgoritmo.getInstance(), SectorDibujo.getInstance(), SectorAlgoritmo.getInstance()));
     }
 }

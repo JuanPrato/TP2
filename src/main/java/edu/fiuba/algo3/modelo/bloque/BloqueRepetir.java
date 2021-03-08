@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -37,21 +38,31 @@ public class BloqueRepetir extends ContenedorDeBloques implements IBloque {
     }
 
     @Override
-    public Label vista(Stage stage) {
-        /*VBox rec = new VBox();
-        Button b = new Button(String.format("REPETIR %s", nRepeticiones));
+    public VBox vista(Stage stage) {
+        VBox rec = new VBox();
         List<VBox> boxs = this.vistasBloques(stage);
         for (VBox box: boxs){
             box.setPadding(new Insets(0,0,0,15));
         }
-        b.setOnAction(new BloqueAcopladoHandler(this, stage));
-        rec.getChildren().add(b);
-        rec.getChildren().addAll(boxs);
-        return rec;*/
-        Label bloque = new Label();
+        Button bloque = new Button();
         bloque.setGraphic(new ImageView
-                (new Image("src/main/java/edu/fiuba/algo3/vista/imagenes/RepetirX"+Integer.toString(nRepeticiones)+".png"))
+                (new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/RepetirX"+Integer.toString(nRepeticiones)+".png"))
         );
-        return bloque;
+        bloque.setStyle(
+                "-fx-border-color: transparent;\n" +
+                "-fx-border-width: 0;\n" +
+                "-fx-background-radius: 5;\n" +
+                "-fx-background-color: ef5ca3;\n" +
+                "-fx-font-family:\"Segoe UI\", Helvetica, Arial, sans-serif;\n" +
+                "-fx-font-size: 1em; /* 12 */\n" +
+                "-fx-text-fill: #828282;"
+        );
+        bloque.setOnAction(new BloqueAcopladoHandler(this, stage));
+        //Separador
+        Region region = new Region();
+        region.setPrefHeight(10);
+        rec.getChildren().addAll(bloque,region);
+        rec.getChildren().addAll(boxs);
+        return rec;
     }
 }
