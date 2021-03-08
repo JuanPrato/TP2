@@ -37,25 +37,25 @@ public class ContenedorBloques extends VBox {
         titulo.setFill(Color.web("7665a0"));
 
         Button botonBloqueArriba = new BotonBloque("Arriba", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueARRIBA.png"));
+                Color.web("00adbc"), Color.web("036a73"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueArriba.png"));
         botonBloqueArriba.setOnAction(new BotonBloqueDireccionEventHandler(stage, contenedorActual, sectorDibujo, Direccion.arriba()));
         botonBloqueArriba.setDefaultButton(true);
         botones.add(botonBloqueArriba);
 
         Button botonBloqueAbajo = new BotonBloque("Abajo", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueABAJO.png"));
+                Color.web("00adbc"), Color.web("036a73"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueAbajo.png"));
         botonBloqueAbajo.setOnAction(new BotonBloqueDireccionEventHandler(stage, contenedorActual, sectorDibujo, Direccion.abajo()));
         botonBloqueAbajo.setDefaultButton(true);
         botones.add(botonBloqueAbajo);
 
-        Button botonBloqueIzquierda = new BotonBloque("Izquierda", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueIZQUIERDA.png"));
+        Button botonBloqueIzquierda = new BotonBloque("Izq.", 185, 70, 185, 70,
+                Color.web("00adbc"), Color.web("036a73"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueIzquierda.png"));
         botonBloqueIzquierda.setOnAction(new BotonBloqueDireccionEventHandler(stage, contenedorActual, sectorDibujo, Direccion.izquierda()));
         botonBloqueIzquierda.setDefaultButton(true);
         botones.add(botonBloqueIzquierda);
 
         Button botonBloqueDerecha = new BotonBloque("Derecha", 185, 70, 185, 70,
-                Color.web("00adbc"), Color.web("036a73"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueDERECHA.png"));
+                Color.web("00adbc"), Color.web("036a73"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueDerecha.png"));
         botonBloqueDerecha.setOnAction(new BotonBloqueDireccionEventHandler(stage, contenedorActual, sectorDibujo, Direccion.derecha()));
         botonBloqueDerecha.setDefaultButton(true);
         botones.add(botonBloqueDerecha);
@@ -85,8 +85,8 @@ public class ContenedorBloques extends VBox {
         botonBloqueRepetir3.setDefaultButton(true);
         botones.add(botonBloqueRepetir3);
 
-        Button botonInvertir = new BotonBloque("Invertir", 185, 70, 185, 70, Color.web("ef5ca3"),
-                Color.web("ae3e74"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/Invertir.png"));
+        Button botonInvertir = new BotonBloque("Invertir", 185, 70, 185, 70, Color.web("fcdd2a"),
+                Color.web("d6be30"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/Invertir.png"));
         botonInvertir.setOnAction(new BotonBloqueEventHandler(stage, contenedorActual, sectorDibujo, new BloqueInvertir()));
         botonInvertir.setDefaultButton(true);
         botones.add(botonInvertir);
@@ -100,7 +100,7 @@ public class ContenedorBloques extends VBox {
         botonSave.setOnAction(new BotonSaveEventHandler());
         botonesPersonalizado.getChildren().addAll(botonPersonalizado, botonSave);
 
-        Button botonFree = new BotonBloque("BLoquear\nRepetir", 185, 70, 185, 70, Color.web("ef5ca3"),
+        Button botonFree = new BotonBloque("Bloquear\nRepetir", 185, 70, 185, 70, Color.web("ef5ca3"),
                 Color.web("ae3e74"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/RepetirBloquear.png"));
         botonFree.setOnAction(new BotonFreeEventHandler(stage));
         botonFree.setDefaultButton(true);

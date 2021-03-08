@@ -23,13 +23,13 @@ public class ContenedorAlgoritmos extends VBox {
         this.stage = stage;
 
         stage.setMaximized(true);
-        this.setPadding(new Insets(500,700,700,500));
-        this.setPadding(new Insets (0,600,600,0));
-        this.setBackground(new Background(new BackgroundFill(Color.web("#a29bfe"), CornerRadii.EMPTY, Insets.EMPTY)));
+        //this.setPadding(new Insets(500,700,700,500));
+        this.setPadding(new Insets (5,700,1000,5));
+        this.setBackground(new Background(new BackgroundFill(Color.web("#c3beff"), CornerRadii.EMPTY, Insets.EMPTY)));
 
-        Text titulo = new Text("Espacio de trabajo");
+        Text titulo = new Text("ESPACIO DE TRABAJO\n");
         titulo.setFont(Font.font("Calibri", FontWeight.BOLD,20));
-        titulo.setFill(Color.web("ffffff"));
+        titulo.setFill(Color.web("000000"));
 
         List<VBox> bloques = sectorAlgoritmo.vistasBloques(stage);
         this.getChildren().addAll(titulo);
