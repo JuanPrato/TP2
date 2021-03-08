@@ -3,6 +3,7 @@ package edu.fiuba.algo3.vista;
 import edu.fiuba.algo3.controlador.*;
 import edu.fiuba.algo3.modelo.bloque.*;
 import edu.fiuba.algo3.modelo.direccion.Direccion;
+import edu.fiuba.algo3.modelo.sector.SectorAlgoritmo;
 import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -21,7 +22,7 @@ import java.util.List;
 public class ContenedorBloques extends VBox {
     private Stage stage;
 
-    public ContenedorBloques(Stage stage, ContenedorDeBloques sectorAlgoritmo, SectorDibujo sectorDibujo, ContenedorDeBloques contenedorActual) {
+    public ContenedorBloques(Stage stage, SectorAlgoritmo sectorAlgoritmo, SectorDibujo sectorDibujo, ContenedorDeBloques contenedorActual) {
         super();
         this.stage = stage;
         //stage.setMaximized(true);
@@ -100,7 +101,7 @@ public class ContenedorBloques extends VBox {
         botonSave.setOnAction(new BotonSaveEventHandler());
         botonesPersonalizado.getChildren().addAll(botonPersonalizado, botonSave);
 
-        Button botonFree = new BotonBloque("Bloquear\nRepetir", 185, 70, 185, 70, Color.web("ef5ca3"),
+        Button botonFree = new BotonBloque("Desbloquear\nRepetir", 185, 70, 185, 70, Color.web("ef5ca3"),
                 Color.web("ae3e74"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/RepetirBloquear.png"));
         botonFree.setOnAction(new BotonFreeEventHandler(stage));
         botonFree.setDefaultButton(true);

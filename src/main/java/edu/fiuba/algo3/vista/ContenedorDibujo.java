@@ -71,4 +71,8 @@ public class ContenedorDibujo extends VBox {
 
         this.getChildren().addAll(tablero, region, botonEjecutar, region2, botonSalir);
     }
+
+    public void reiniciarJuego(){
+
+    }
 }

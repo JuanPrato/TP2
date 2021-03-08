@@ -30,7 +30,7 @@ public class ContenedorVentana extends HBox {
 
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setFitToWidth(false);
-        scrollPane.setContent(new ContenedorAlgoritmos(stage, sectorAlgoritmo));
+        scrollPane.setContent(new ContenedorAlgoritmos(stage, sectorAlgoritmo, contenedorActual));
 
         this.getChildren().addAll(contenedorDibujo, contenedorBloques, scrollPane);
         //this.setSpacing(20);

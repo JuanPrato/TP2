@@ -45,7 +45,7 @@ public class SectorDibujo {
 
     public void limpiarTablero(){
         tablero = new Tablero();
-        personaje.setPosicion(new Posicion());
+        personaje = new Personaje();
     }
 
     public List<Line> recorrido(){

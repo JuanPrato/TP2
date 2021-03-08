@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.bloque.ContenedorDeBloques;
+import edu.fiuba.algo3.modelo.sector.SectorAlgoritmo;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
@@ -18,7 +19,7 @@ import java.util.List;
 public class ContenedorAlgoritmos extends VBox {
     private Stage stage;
 
-    public ContenedorAlgoritmos(Stage stage, ContenedorDeBloques sectorAlgoritmo) {
+    public ContenedorAlgoritmos(Stage stage, SectorAlgoritmo sectorAlgoritmo, ContenedorDeBloques contenedorActual) {
         super();
         this.stage = stage;
 
@@ -31,7 +32,7 @@ public class ContenedorAlgoritmos extends VBox {
         titulo.setFont(Font.font("Calibri", FontWeight.BOLD,20));
         titulo.setFill(Color.web("000000"));
 
-        List<VBox> bloques = sectorAlgoritmo.vistasBloques(stage);
+        List<VBox> bloques = sectorAlgoritmo.vistasBloques(stage, contenedorActual);
         this.getChildren().addAll(titulo);
         this.getChildren().addAll(bloques);
     }
