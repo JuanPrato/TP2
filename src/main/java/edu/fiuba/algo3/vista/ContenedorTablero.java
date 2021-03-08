@@ -38,7 +38,7 @@ public class ContenedorTablero extends GridPane {
 
     public ContenedorTablero(SectorDibujo sectorDibujo) {
         this.sectorDibujo = sectorDibujo;
-        this.celda = new Rectangle[50][50];
+        this.celda = new Rectangle[101][101];
         inicializarTableroVista();
         this.setGridLinesVisible(false);
     }
@@ -53,7 +53,6 @@ public class ContenedorTablero extends GridPane {
         });
     }
 
-
     public void dibujarLinea(Posicion posInicial, Posicion posFinal){
         int posIniX = (Math.abs(posInicial.getPosicionX()/10 + 25));
         int posFinX = (Math.abs(posFinal.getPosicionX()/10 + 25));
@@ -67,9 +66,9 @@ public class ContenedorTablero extends GridPane {
     }
 
     private void inicializarTableroVista() {
-        for (int j = 0; j < 50; j++) {
-            for (int i = 0; i < 50; i++) {
-                Rectangle relleno = new Rectangle(10, 10, Color.TRANSPARENT);
+        for (int j = 0; j < 101; j++) {
+            for (int i = 0; i < 101; i++) {
+                Rectangle relleno = new Rectangle(5, 5, Color.TRANSPARENT);
                 /*relleno.setStrokeType(StrokeType.INSIDE);
                 if (j == 25 && i == 25)
                     relleno.setStroke(Color.BLACK);*/
@@ -80,7 +79,7 @@ public class ContenedorTablero extends GridPane {
     }
 
         /*private void dibujarLinea(){
-        for(int i=25; i < 35; i++){
+        for(int i=50; i < 35; i++){
             for(int j=25; j < 26; j++){
                 this.celda[i][j].setFill(Color.BLACK);
             }

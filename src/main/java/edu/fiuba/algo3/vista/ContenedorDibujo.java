@@ -32,25 +32,28 @@ public class ContenedorDibujo extends VBox {
         this.setBackground(new Background(new BackgroundFill(Color.web("f0f8fb"), CornerRadii.EMPTY, Insets.EMPTY)));
         this.setSpacing(5);
 
-        StackPane tablero = new StackPane();
-        ContenedorTablero contenedorPersonaje = ContenedorTablero.getInstance();
-
+        //StackPane tablero = new StackPane();
+        //ContenedorTablero contenedorPersonaje = ContenedorTablero.getInstance();
         //contenedorPersonaje.dibujarLinea(new Posicion(25,25),new Posicion(35,26));
 
-        Label fondoTablero = new Label();
-        fondoTablero.setGraphic(new ImageView(new Image ("file:src/main/java/edu/fiuba/algo3/vista/imagenes/fondoParaDibujar.png")));
+        VistaTablero vistaTablero = VistaTablero.getInstance();
 
-        Label personaje = sectorDibujo.getPersonaje().vista();
-        personaje.setGraphic(new ImageView(new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/DibujarAbajo.png")));
+        //Label fondoTablero = new Label();
+        //fondoTablero.setGraphic(new ImageView(new Image ("file:src/main/java/edu/fiuba/algo3/vista/imagenes/fondoParaDibujar.png")));
 
-        tablero.getChildren().addAll(fondoTablero, contenedorPersonaje, personaje);
+        //Label personaje = sectorDibujo.getPersonaje().vista();
+        //personaje.setGraphic(new ImageView(new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/DibujarAbajo.png")));
+
+        //tablero.getChildren().addAll(fondoTablero, contenedorPersonaje, personaje);
+        //tablero.getChildren().addAll(vistaTablero, personaje);
 
         Button botonEjecutar = new BotonEjecutar("Ejecutar",140,70,160,70,Color.web("ffa400"), Color.web("c37e01"));
         botonEjecutar.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 SectorAlgoritmo.getInstance().ejecutarAlgoritmo(sectorDibujo);
-                contenedorPersonaje.dibujarTodasLineas();
+                vistaTablero.dibujarTablero();
+                //contenedorPersonaje.dibujarTodasLineas();
                 stage.setScene(SceneUtil.getScene(stage, SectorAlgoritmo.getInstance(), sectorDibujo, sectorAlgoritmo));
                 System.out.println();
             }
@@ -69,6 +72,7 @@ public class ContenedorDibujo extends VBox {
         botonSalir.setOnAction(new BotonSalirEventHandler());
         botonSalir.setDefaultButton(true);
 
-        this.getChildren().addAll(tablero, region, botonEjecutar, region2, botonSalir);
+        this.getChildren().addAll(vistaTablero, region, botonEjecutar, region2, botonSalir);
+        //this.getChildren().addAll(tablero, region, botonEjecutar, region2, botonSalir);
     }
 }

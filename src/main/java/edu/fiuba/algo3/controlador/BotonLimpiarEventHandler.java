@@ -5,6 +5,7 @@ import edu.fiuba.algo3.modelo.sector.SectorDibujo;
 import edu.fiuba.algo3.vista.ContenedorTablero;
 import edu.fiuba.algo3.vista.ContenedorVentana;
 import edu.fiuba.algo3.vista.SceneUtil;
+import edu.fiuba.algo3.vista.VistaTablero;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -21,7 +22,8 @@ public class BotonLimpiarEventHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
         SectorAlgoritmo.getInstance().reiniciarJuego(SectorDibujo.getInstance());
-        ContenedorTablero.reiniciarTablero();
+        VistaTablero.reiniciarTablero();
+        //ContenedorTablero.reiniciarTablero();
         stage.setScene(SceneUtil.getScene(stage, SectorAlgoritmo.getInstance(), SectorDibujo.getInstance(), SectorAlgoritmo.getInstance()));
     }
 }
