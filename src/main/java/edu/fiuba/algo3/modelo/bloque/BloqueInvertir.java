@@ -54,7 +54,7 @@ public class BloqueInvertir extends ContenedorDeBloques implements IBloque {
         Button bloque = new Button();
         bloque.setStyle(
                 "-fx-background-radius: 5;\n" +
-                        "-fx-background-color: #fcdd2a;\n"
+                        "-fx-background-color: #ef5ca3;\n"
         );
         bloque.setGraphic(new ImageView(new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/Invertir.png")));
         bloque.setOnAction(new BloqueAcopladoHandler(this, stage));
