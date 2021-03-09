@@ -46,9 +46,9 @@ public class ContenedorBloques extends VBox {
                 Color.web("AD8B2A"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/personalizar.png"));
         botonPersonalizado.setOnAction(new BotonBloqueContenedorEventHandler(stage, contenedorActual, sectorDibujo, BloquePersonalizado.getInstance()));
 
-        Button remove = new BotonBloque("Limpiar", 185, 70, 185, 70, Color.web("FFD248"),
+        Button liberar = new BotonBloque("Liberar", 185, 70, 185, 70, Color.web("FFD248"),
                 Color.web("AD8B2A"), (new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/Remover.png")));
-        remove.setOnAction(new EventHandler<ActionEvent>() {
+        liberar.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 BloquePersonalizado.getInstance().limpiarAlgoritmo();
@@ -59,7 +59,7 @@ public class ContenedorBloques extends VBox {
                 Color.web("AD8B2A"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/diskette.png"));
         botonSave.setOnAction(new BotonSaveEventHandler());
 
-        botoneraTop.getChildren().addAll(botonSave, remove);
+        botoneraTop.getChildren().addAll(botonSave, liberar);
         botonesPersonalizado.getChildren().addAll(botoneraTop, botonPersonalizado);
 
         this.getChildren().addAll(titulo, botonesPersonalizado);

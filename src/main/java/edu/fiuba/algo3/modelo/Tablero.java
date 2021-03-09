@@ -20,12 +20,4 @@ public class Tablero {
     public List<Linea> getRecorrido(){
         return recorrido;
     }
-
-    public List<Line> visualizar(){
-        List<Line> lineas = new ArrayList<>();
-        for (Linea linea : recorrido) {
-            lineas.add(linea.vista());
-        }
-        return lineas;
-    }
 }

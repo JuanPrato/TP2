@@ -41,13 +41,4 @@ public abstract class Linea {
             return "OTRO";
         }
     }
-
-    public Line vista(){
-        Line line = new Line();
-        line.setStartX(this.getPosicionInicial().getPosicionX());
-        line.setStartY(-this.getPosicionInicial().getPosicionY());
-        line.setEndX(this.getPosicionFinal().getPosicionX());
-        line.setEndY(-this.getPosicionFinal().getPosicionY());
-        return line;
-    }
 }

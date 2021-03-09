@@ -48,10 +48,6 @@ public class SectorDibujo {
         personaje = new Personaje();
     }
 
-    public List<Line> recorrido(){
-        return tablero.visualizar();
-    }
-
     static public SectorDibujo getInstance(){
         return sectorDibujoIns;
     }

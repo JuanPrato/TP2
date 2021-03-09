@@ -21,7 +21,7 @@ public class ContenedorAlgoritmos extends VBox {
     public ContenedorAlgoritmos(Stage stage, SectorAlgoritmo sectorAlgoritmo, ContenedorDeBloques contenedorActual) {
         super();
         this.stage = stage;
-        this.setPadding(new Insets (5,450,1000,5));
+        this.setPadding(new Insets (5,180,1000,5));
         this.setBackground(new Background(new BackgroundFill(Color.web("#c3beff"), CornerRadii.EMPTY, Insets.EMPTY)));
 
         Text titulo = new Text("ESPACIO DE TRABAJO\n");
