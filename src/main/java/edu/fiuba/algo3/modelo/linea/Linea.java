@@ -5,8 +5,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
 public abstract class Linea {
-    private Posicion posicionInicial;
-    private Posicion posicionFinal;
+    protected Posicion posicionInicial;
+    protected Posicion posicionFinal;
 
     public Linea(Posicion posicionInicial, Posicion posicionFinal){
         this.posicionInicial = posicionInicial;

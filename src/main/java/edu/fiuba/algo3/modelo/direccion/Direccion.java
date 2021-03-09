@@ -9,8 +9,7 @@ public class Direccion {
     private static Direccion abajo;
     private static Direccion derecha;
     private static Direccion izquierda;
-    private static int maxPositionX;
-    private static int maxPositionY;
+    private static int maxPosition;
 
     static {
         arriba = new Direccion(0, -1, "Arriba");
@@ -23,8 +22,7 @@ public class Direccion {
         derecha.setInversa(izquierda);
         izquierda.setInversa(derecha);
 
-        maxPositionX = 110;
-        maxPositionY = 110;
+        maxPosition = 42 * 9;
 
     }
 
@@ -49,15 +47,12 @@ public class Direccion {
 
     public Posicion proximaPosicion(Posicion posicion) {
         // * 10 seria el espacio que ocuparia en pantalla la linea
-/*
-        int nextX = posicion.getPosicionX() + this.valueX * 10;
-        if (nextX >= maxPositionX) nextX = maxPositionX;
-        int nextY = posicion.getPosicionY() + this.valueY * 10;
-        if (nextX >= maxPositionY) nextY = maxPositionY;
-        */
         int nextX = posicion.getPosicionX() + this.valueX * 42;
+        if (Math.abs(nextX) >= maxPosition) nextX = maxPosition * (int)Math.signum(nextX);
         int nextY = posicion.getPosicionY() + this.valueY * 42;
-
+        if (Math.abs(nextY) >= maxPosition) nextY = maxPosition * (int)Math.signum(nextY);
+        System.out.println(nextX);
+        System.out.println(nextY);
         return new Posicion(nextX, nextY);
     }
 

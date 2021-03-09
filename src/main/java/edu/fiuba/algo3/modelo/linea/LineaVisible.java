@@ -11,7 +11,7 @@ public class LineaVisible extends Linea{
 
     @Override
     public boolean colocar(){
-        return true;
+        return !posicionInicial.equals(posicionFinal);
     }
 
 }
