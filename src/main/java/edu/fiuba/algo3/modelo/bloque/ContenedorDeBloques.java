@@ -26,7 +26,7 @@ public abstract class ContenedorDeBloques {
     }
 
     public List<VBox> vistasBloques(Stage stage, ContenedorDeBloques contenedorActual){
-        System.out.println(bloquesAcoplados.size());
+        //System.out.println(bloquesAcoplados.size());
         List<VBox> bloques = new ArrayList<>();
         bloquesAcoplados.forEach(bloque -> {
             bloques.add(bloque.vista(stage, contenedorActual));

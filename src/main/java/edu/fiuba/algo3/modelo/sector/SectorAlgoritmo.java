@@ -22,8 +22,12 @@ public class SectorAlgoritmo extends ContenedorDeBloques {
     }
 
     public void reiniciarJuego(SectorDibujo sectorDibujo) {
-        sectorDibujo.limpiarTablero();
+        sectorDibujo.reiniciarTablero();
         this.bloquesAcoplados = new ArrayList<IBloque>();
+    }
+
+    public void limpiarTablero(SectorDibujo sectorDibujo){
+        sectorDibujo.reiniciarTablero();
     }
 
     static public SectorAlgoritmo getInstance(){

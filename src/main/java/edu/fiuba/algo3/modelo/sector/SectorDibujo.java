@@ -43,7 +43,7 @@ public class SectorDibujo {
         tablero.actualizar(linea);
     }
 
-    public void limpiarTablero(){
+    public void reiniciarTablero(){
         tablero = new Tablero();
         personaje = new Personaje();
     }

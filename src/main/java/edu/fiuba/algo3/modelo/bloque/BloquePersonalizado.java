@@ -14,6 +14,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class BloquePersonalizado extends ContenedorDeBloques implements IBloque{
 
     static private final BloquePersonalizado instance = new BloquePersonalizado();
@@ -33,6 +35,10 @@ public class BloquePersonalizado extends ContenedorDeBloques implements IBloque{
         }
     }
 
+    public void limpiarAlgoritmo(){
+        bloquesAcoplados = new ArrayList<IBloque>();
+    }
+
     public void guardarAlgoritmo(){
         // TODO: Buscar una forma de no violar el encapsulamiento
         this.bloquesAcoplados.addAll(SectorAlgoritmo.getInstance().getBloques());
@@ -43,7 +49,7 @@ public class BloquePersonalizado extends ContenedorDeBloques implements IBloque{
         VBox box = new VBox();
         Label bloque = new Label();
         bloque.setGraphic(new ImageView
-                (new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/RepetirBloquear.png")));
+                (new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/Play.png")));
         bloque.setStyle(
                 "-fx-border-color: transparent;\n" +
                         "-fx-border-width: 0;\n" +

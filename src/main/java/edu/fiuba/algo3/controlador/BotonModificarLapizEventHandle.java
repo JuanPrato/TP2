@@ -13,18 +13,18 @@ public class BotonModificarLapizEventHandle implements EventHandler<ActionEvent>
     private Stage stage;
     private ContenedorDeBloques sectorAlgoritmo;
     private SectorDibujo sectorDibujo;
-    private IBloque bloqueBajarLapiz;
+    private IBloque bloqueEstrategiaLapiz;
 
-    public BotonModificarLapizEventHandle(Stage stage, ContenedorDeBloques sectorAlgoritmo, SectorDibujo sectorDibujo, IBloque bloqueBajarLapiz) {
+    public BotonModificarLapizEventHandle(Stage stage, ContenedorDeBloques sectorAlgoritmo, SectorDibujo sectorDibujo, IBloque bloqueEstrategiaLapiz) {
         this.stage=stage;
         this.sectorAlgoritmo=sectorAlgoritmo;
         this.sectorDibujo = sectorDibujo;
-        this.bloqueBajarLapiz = bloqueBajarLapiz;
+        this.bloqueEstrategiaLapiz = bloqueEstrategiaLapiz;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        sectorAlgoritmo.agregarBloque(bloqueBajarLapiz);
+        sectorAlgoritmo.agregarBloque(bloqueEstrategiaLapiz);
         stage.setScene(SceneUtil.getScene(stage, SectorAlgoritmo.getInstance(), sectorDibujo, sectorAlgoritmo));
     }
 }

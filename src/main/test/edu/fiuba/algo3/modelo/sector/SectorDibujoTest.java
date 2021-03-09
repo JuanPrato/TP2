@@ -81,7 +81,7 @@ public class SectorDibujoTest {
         Assertions.assertEquals(1, recorrido.size());
         Assertions.assertNotEquals(new Posicion(0,0), posicion);
 
-        sector.limpiarTablero();
+        sector.reiniciarTablero();
 
         recorrido = sector.getTablero().getRecorrido();
         posicion = sector.getPersonaje().getPosicion();

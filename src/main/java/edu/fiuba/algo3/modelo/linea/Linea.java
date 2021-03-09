@@ -38,24 +38,7 @@ public abstract class Linea {
         if(posicionInicial.getPosicionY() == posicionFinal.getPosicionY()){
             return "HORIZONTAL";
         }else{
-            return "INVALIDO";
-        }
-    }
-
-    public String direccion(){
-        if( (posicionFinal.getPosicionX() - posicionInicial.getPosicionX()) > 0){
-            return "DERECHA";
-        }
-        if( (posicionFinal.getPosicionX() - posicionInicial.getPosicionX()) < 0){
-            return "IZQUIERDA";
-        }
-        if ( (posicionFinal.getPosicionY() - posicionInicial.getPosicionY()) < 0){
-            return "ARRIBA";
-        }
-        if ( (posicionFinal.getPosicionY() - posicionInicial.getPosicionY()) > 0) {
-            return "ABAJO";
-        }else{
-            return "INVALIDO";
+            return "OTRO";
         }
     }
 
