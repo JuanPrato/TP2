@@ -62,7 +62,8 @@ public class BloqueRepetir extends ContenedorDeBloques implements IBloque {
                 "-fx-text-fill: #828282;"
         );
         bloque.setOnAction(new BloqueAcopladoHandler(this, stage));
-
+        bloque.setOnMouseEntered(e -> bloque.setStyle("-fx-background-color: white;"));
+        bloque.setOnMouseExited(e -> bloque.setStyle("-fx-background-color: #ef5ca3;"));
         HBox hBox = new HBox();
         Button remove = new BotonBloque(null, 10, 10, 10, 5, Color.web("ffffff"),
                 Color.web("FFA3A3"), (new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/delete.png")));

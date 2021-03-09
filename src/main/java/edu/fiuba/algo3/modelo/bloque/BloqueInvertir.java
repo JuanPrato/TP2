@@ -26,15 +26,16 @@ public class BloqueInvertir extends ContenedorDeBloques implements IBloque {
 
     @Override
     public void agregarBloque(IBloque bloque) {
-        bloque.invertir();
         bloquesAcoplados.add(bloque);
     }
 
     @Override
     public void accion(SectorDibujo sectorDibujo) {
+        this.invertir();
         for (IBloque bloqueActual : bloquesAcoplados) {
             bloqueActual.accion( sectorDibujo );
         }
+        this.invertir();
     }
 
     @Override
@@ -58,7 +59,8 @@ public class BloqueInvertir extends ContenedorDeBloques implements IBloque {
         );
         bloque.setGraphic(new ImageView(new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/Invertir.png")));
         bloque.setOnAction(new BloqueAcopladoHandler(this, stage));
-
+        bloque.setOnMouseEntered(e -> bloque.setStyle("-fx-background-color: white;"));
+        bloque.setOnMouseExited(e -> bloque.setStyle("-fx-background-color: #ef5ca3;"));
         HBox hBox = new HBox();
         Button remove = new BotonBloque(null, 10, 10, 10, 5, Color.web("ffffff"),
                 Color.web("FFA3A3"), (new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/delete.png")));
