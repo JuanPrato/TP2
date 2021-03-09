@@ -49,9 +49,10 @@ public class ContenedorBloques extends VBox {
         botonBloqueAbajo.setDefaultButton(true);
         botones.add(botonBloqueAbajo);
 
-        Button botonBloqueIzquierda = new BotonBloque("Izq.", 185, 70, 185, 70,
+        Button botonBloqueIzquierda = new BotonBloque("Izquierda", 185, 70, 185, 70,
                 Color.web("00adbc"), Color.web("036a73"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/BloqueIzquierda.png"));
         botonBloqueIzquierda.setOnAction(new BotonBloqueDireccionEventHandler(stage, contenedorActual, sectorDibujo, Direccion.izquierda()));
+        botonBloqueIzquierda.setFont(Font.font("Calibri", FontWeight.BOLD,15));
         botonBloqueIzquierda.setDefaultButton(true);
         botones.add(botonBloqueIzquierda);
 
@@ -93,12 +94,13 @@ public class ContenedorBloques extends VBox {
         botones.add(botonInvertir);
 
         HBox botonesPersonalizado = new HBox();
-        Button botonPersonalizado = new BotonBloque("Personalizado", 185, 70, 185, 70, Color.web("ef5ca3"),
-                Color.web("ae3e74"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/RepetirBloquear.png"));
+        Button botonPersonalizado = new BotonBloque("Personalizado", 185, 70, 185, 70, Color.web("FFD248"),
+                Color.web("AD8B2A"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/personalizar.png"));
+        botonPersonalizado.setFont(Font.font("Calibri", FontWeight.BOLD,15));
         botonPersonalizado.setOnAction(new BotonBloqueEventHandler(stage, contenedorActual, sectorDibujo, BloquePersonalizado.getInstance()));
 
-        Button botonSave = new BotonBloque("Guardar", 185, 70, 185, 70, Color.web("ef5ca3"),
-                Color.web("ae3e74"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/RepetirBloquear.png"));
+        Button botonSave = new BotonBloque("Guardar", 185, 70, 185, 70, Color.web("FFD248"),
+                Color.web("AD8B2A"), new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/diskette.png"));
         botonSave.setOnAction(new BotonSaveEventHandler());
         botonesPersonalizado.getChildren().addAll(botonPersonalizado, botonSave);
 
