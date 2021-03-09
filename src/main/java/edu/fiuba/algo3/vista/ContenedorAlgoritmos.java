@@ -28,8 +28,13 @@ public class ContenedorAlgoritmos extends VBox {
         titulo.setFont(Font.font("Calibri", FontWeight.BOLD,20));
         titulo.setFill(Color.web("000000"));
 
+        Text aclaracion = new Text("Para ingresar a un contenedor (X2, X3 o Invertir), simplemente hacer click en el una vez que este añadido.\n" +
+                "Para salir, hacer click en el boton Salir del contenedor\n");
+        titulo.setFont(Font.font("Calibri", FontWeight.BOLD,15));
+        titulo.setFill(Color.web("000000"));
+
         List<VBox> bloques = sectorAlgoritmo.vistasBloques(stage, contenedorActual);
-        this.getChildren().addAll(titulo);
+        this.getChildren().addAll(titulo,aclaracion);
         this.getChildren().addAll(bloques);
     }
 
