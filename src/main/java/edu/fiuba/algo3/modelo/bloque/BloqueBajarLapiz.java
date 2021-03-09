@@ -41,8 +41,8 @@ public class BloqueBajarLapiz implements IBloque {
                         "-fx-background-color: #00bb2d;\n"
         );
         HBox hBox = new HBox();
-        Button remove = new BotonBloque("Remover", 160, 15, 160, 20, Color.web("ef5ca3"),
-                Color.web("ae3e74"), null);
+        Button remove = new BotonBloque(null, 10, 10, 10, 5, Color.web("ffffff"),
+                Color.web("FFA3A3"), (new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/delete.png")));
         remove.setOnAction(new RemoverBloqueEventHandler(this, stage, contenedorActual));
         //Separador
         Region region = new Region();

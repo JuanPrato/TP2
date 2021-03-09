@@ -49,10 +49,15 @@ public class Direccion {
 
     public Posicion proximaPosicion(Posicion posicion) {
         // * 10 seria el espacio que ocuparia en pantalla la linea
+/*
         int nextX = posicion.getPosicionX() + this.valueX * 10;
         if (nextX >= maxPositionX) nextX = maxPositionX;
         int nextY = posicion.getPosicionY() + this.valueY * 10;
         if (nextX >= maxPositionY) nextY = maxPositionY;
+        */
+        int nextX = posicion.getPosicionX() + this.valueX * 42;
+        int nextY = posicion.getPosicionY() + this.valueY * 42;
+
         return new Posicion(nextX, nextY);
     }
 

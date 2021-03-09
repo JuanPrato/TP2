@@ -3,7 +3,6 @@ package edu.fiuba.algo3.vista;
 import edu.fiuba.algo3.modelo.bloque.ContenedorDeBloques;
 import edu.fiuba.algo3.modelo.sector.SectorAlgoritmo;
 import javafx.geometry.Insets;
-import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -22,10 +21,7 @@ public class ContenedorAlgoritmos extends VBox {
     public ContenedorAlgoritmos(Stage stage, SectorAlgoritmo sectorAlgoritmo, ContenedorDeBloques contenedorActual) {
         super();
         this.stage = stage;
-
-        stage.setMaximized(true);
-        //this.setPadding(new Insets(500,700,700,500));
-        this.setPadding(new Insets (5,700,1000,5));
+        this.setPadding(new Insets (5,450,1000,5));
         this.setBackground(new Background(new BackgroundFill(Color.web("#c3beff"), CornerRadii.EMPTY, Insets.EMPTY)));
 
         Text titulo = new Text("ESPACIO DE TRABAJO\n");

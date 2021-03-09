@@ -9,23 +9,23 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
 
-public class BotonBloqueEventHandler implements EventHandler<ActionEvent> {
+public class BotonBloqueContenedorEventHandler implements EventHandler<ActionEvent> {
 
     private final ContenedorDeBloques contenedorActual;
     private final SectorDibujo sectorDibujo;
-    private final IBloque bloqueRepetir;
+    private final IBloque bloqueContenedor;
     private final Stage stage;
 
-    public BotonBloqueEventHandler(Stage stage, ContenedorDeBloques contenedorActual, SectorDibujo sectorDibujo, IBloque bloqueRepetir) {
+    public BotonBloqueContenedorEventHandler(Stage stage, ContenedorDeBloques contenedorActual, SectorDibujo sectorDibujo, IBloque bloqueContenedor) {
         this.contenedorActual = contenedorActual;
         this.sectorDibujo = sectorDibujo;
-        this.bloqueRepetir = bloqueRepetir;
+        this.bloqueContenedor = bloqueContenedor;
         this.stage = stage;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        contenedorActual.agregarBloque(this.bloqueRepetir);
+        contenedorActual.agregarBloque(this.bloqueContenedor);
         stage.setScene(SceneUtil.getScene(stage, SectorAlgoritmo.getInstance(), sectorDibujo, contenedorActual));
     }
 }

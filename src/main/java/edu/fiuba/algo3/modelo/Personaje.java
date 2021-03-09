@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.transform.Translate;
 
 public class Personaje {
+    private String ultimaDireccion = "ABAJO";
 
     private Posicion posicion = new Posicion();
 
@@ -31,6 +32,7 @@ public class Personaje {
     public Linea moverYDibujar(Direccion direccion){
         Posicion posicionAnterior = this.posicion;
         this.posicion = direccion.proximaPosicion(this.posicion);
+        ultimaDireccion = direccion.direccionToString();
 
         return lapiz.dibujar(posicionAnterior, this.posicion);
     }
@@ -45,7 +47,7 @@ public class Personaje {
 
     public Label vista() {
         Label personaje = new Label();
-        personaje.setGraphic(new ImageView(new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/DibujarAbajo.png")));
+        personaje.setGraphic(new ImageView(new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/Dibujar"+ultimaDireccion+".png")));
         personaje.getTransforms().add(new Translate(posicion.getPosicionX(),posicion.getPosicionY()));
         return personaje;
     }

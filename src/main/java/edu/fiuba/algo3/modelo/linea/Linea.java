@@ -17,10 +17,6 @@ public abstract class Linea {
         return posicionInicial;
     }
 
-    public void setPosicionInicial(Posicion posicionInicial) {
-        this.posicionInicial = posicionInicial;
-    }
-
     public Posicion getPosicionFinal() {
         return posicionFinal;
     }
@@ -34,6 +30,17 @@ public abstract class Linea {
     }
 
     public abstract boolean colocar();
+
+    public String posicionamiento(){
+        if(posicionInicial.getPosicionX() == posicionFinal.getPosicionX()){
+            return "VERTICAL";
+        }
+        if(posicionInicial.getPosicionY() == posicionFinal.getPosicionY()){
+            return "HORIZONTAL";
+        }else{
+            return "OTRO";
+        }
+    }
 
     public Line vista(){
         Line line = new Line();

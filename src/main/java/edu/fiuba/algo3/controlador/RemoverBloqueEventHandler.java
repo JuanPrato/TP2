@@ -16,7 +16,7 @@ public class RemoverBloqueEventHandler implements EventHandler<ActionEvent> {
     private final ContenedorDeBloques contenedorActual;
 
     public RemoverBloqueEventHandler(IBloque bloque, Stage stage, ContenedorDeBloques contenedorActual){
-        this.bloque=bloque;
+        this.bloque = bloque;
         this.stage = stage;
         this.contenedorActual=contenedorActual;
     }
