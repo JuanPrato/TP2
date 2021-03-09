@@ -28,7 +28,7 @@ public class SectorDibujoTest {
 
         Posicion posicion = sector.getPersonaje().getPosicion();
 
-        Assertions.assertEquals(new Posicion(10, 0), posicion);
+        Assertions.assertEquals(new Posicion(42, 0), posicion);
     }
 
     @Test
@@ -38,7 +38,7 @@ public class SectorDibujoTest {
 
         Posicion posicion = sector.getPersonaje().getPosicion();
 
-        Assertions.assertEquals(new Posicion(0, -10), posicion);
+        Assertions.assertEquals(new Posicion(0, -1 * 42), posicion);
 
     }
 

@@ -65,7 +65,7 @@ public class PersonajeTest {
         Linea linea = personaje.moverYDibujar(Direccion.derecha());
 
         Assertions.assertNotNull(linea);
-        Assertions.assertEquals(new Posicion(10,0), personaje.getPosicion());
+        Assertions.assertEquals(new Posicion(42,0), personaje.getPosicion());
     }
 
 }

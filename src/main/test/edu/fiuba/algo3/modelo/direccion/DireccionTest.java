@@ -9,13 +9,13 @@ public class DireccionTest {
     @Test
     public void testProximaPosicionDeberiaDarLaProximaPosicionEnLaDireccionCorrecta(){
 
-        Posicion posicion = new Posicion(10,0);
+        Posicion posicion = new Posicion(42,0);
 
         Direccion direccion = Direccion.derecha();
 
         posicion = direccion.proximaPosicion(posicion);
 
-        Assertions.assertEquals(new Posicion(20, 0), posicion);
+        Assertions.assertEquals(new Posicion(2 * 42, 0), posicion);
 
     }
 
@@ -29,6 +29,6 @@ public class DireccionTest {
 
         posicion = direccion.proximaPosicion(posicion);
 
-        Assertions.assertEquals(new Posicion(0,10), posicion);
+        Assertions.assertEquals(new Posicion(0,1 * 42), posicion);
     }
 }

@@ -51,8 +51,6 @@ public class Direccion {
         if (Math.abs(nextX) >= maxPosition) nextX = maxPosition * (int)Math.signum(nextX);
         int nextY = posicion.getPosicionY() + this.valueY * 42;
         if (Math.abs(nextY) >= maxPosition) nextY = maxPosition * (int)Math.signum(nextY);
-        System.out.println(nextX);
-        System.out.println(nextY);
         return new Posicion(nextX, nextY);
     }
 
