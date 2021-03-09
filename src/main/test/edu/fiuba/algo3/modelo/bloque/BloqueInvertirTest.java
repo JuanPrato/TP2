@@ -29,7 +29,7 @@ public class BloqueInvertirTest {
 
         Posicion posicion = sectorDibujo.getPersonaje().getPosicion();
 
-        Assertions.assertEquals(new Posicion(0,-10), posicion);
+        Assertions.assertEquals(new Posicion(0,-1 * 42), posicion);
 
     }
 
@@ -77,7 +77,7 @@ public class BloqueInvertirTest {
 
         Posicion posicion = sectorDibujo.getPersonaje().getPosicion();
 
-        Assertions.assertEquals(new Posicion(0, -20), posicion);
+        Assertions.assertEquals(new Posicion(0, -2 * 42), posicion);
     }
 
     @Test
@@ -93,7 +93,7 @@ public class BloqueInvertirTest {
 
         Posicion posicion = sectorDibujo.getPersonaje().getPosicion();
 
-        Assertions.assertEquals(new Posicion(0, -10), posicion);
+        Assertions.assertEquals(new Posicion(0, -1 * 42), posicion);
     }
 
 }

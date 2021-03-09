@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo.linea;
 
 import edu.fiuba.algo3.modelo.Posicion;
+import javafx.scene.shape.Line;
 
 public class LineaVisible extends Linea{
 
@@ -10,7 +11,7 @@ public class LineaVisible extends Linea{
 
     @Override
     public boolean colocar(){
-        return true;
+        return !posicionInicial.equals(posicionFinal);
     }
 
 }

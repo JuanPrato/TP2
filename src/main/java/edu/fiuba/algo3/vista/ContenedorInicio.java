@@ -19,6 +19,7 @@ public class ContenedorInicio extends VBox {
     public ContenedorInicio(Stage stage){
         super();
         this.stage = stage;
+        stage.setResizable(false);
         this.setAlignment(Pos.CENTER);
         this.setPadding(new Insets(20,20,20,20));
         this.setBackground(new Background(new BackgroundFill(Color.web("fff9f0"), CornerRadii.EMPTY, Insets.EMPTY)));
@@ -29,7 +30,7 @@ public class ContenedorInicio extends VBox {
 
         VBox botoneraInicio = new VBox();
 
-        Button botonInicio = new BotonInicio("Inicio", 140, 70, 160, 70, Color.web("00adbc"), Color.web("036a73"));
+        Button botonInicio = new BotonInicio("Iniciar", 140, 70, 160, 70, Color.web("00adbc"), Color.web("036a73"));
         botonInicio.setOnAction(new BotonInicioEventHandler(stage));
         botonInicio.setDefaultButton(true);
 

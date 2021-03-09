@@ -1,48 +1,37 @@
 package edu.fiuba.algo3.modelo.sector;
 
-import edu.fiuba.algo3.modelo.bloque.BloqueAcoplado;
-import edu.fiuba.algo3.modelo.sector.SectorDibujo;
-import edu.fiuba.algo3.modelo.Personaje;
+import edu.fiuba.algo3.modelo.bloque.ContenedorDeBloques;
 import edu.fiuba.algo3.modelo.bloque.IBloque;
-import javafx.scene.control.Button;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.PhongMaterial;
-import javafx.scene.shape.Box;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
-public class SectorAlgoritmo extends BloqueAcoplado {
-    private final SectorDibujo sectorDibujo;
-    private SectorBloque sectorBloque;
-    private final List<IBloque> bloques;
+public class SectorAlgoritmo extends ContenedorDeBloques {
 
-    public SectorAlgoritmo() {
-        this.bloques = new ArrayList<IBloque>();
-        this.sectorDibujo = new SectorDibujo();
+    static private final SectorAlgoritmo sectorAlgoritmoInst = new SectorAlgoritmo();
+
+    private SectorAlgoritmo() {
+        super();
     }
 
-    public void addBloque(IBloque bloque){
-        bloques.add(bloque);
-    }
 
-    public List<Button> vistasBloques(){
-        System.out.println(bloques.size());
-        List<Button> boxes = new ArrayList<>();
-        bloques.forEach(bloque -> {
-            boxes.add(0, bloque.vista());
-        });
-        return boxes;
-    }
-
-    public void ejecutarAlgoritmo() {
-        this.bloques.forEach(bloque -> {
+    public void ejecutarAlgoritmo(SectorDibujo sectorDibujo) {
+        this.bloquesAcoplados.forEach(bloque -> {
             bloque.accion(sectorDibujo);
         });
     }
 
-    public SectorDibujo getSectorDibujo(){
-        return this.sectorDibujo;
+    public void reiniciarJuego(SectorDibujo sectorDibujo) {
+        sectorDibujo.reiniciarTablero();
+        this.bloquesAcoplados = new ArrayList<IBloque>();
     }
+
+    public void limpiarTablero(SectorDibujo sectorDibujo){
+        sectorDibujo.reiniciarTablero();
+    }
+
+    static public SectorAlgoritmo getInstance(){
+        return sectorAlgoritmoInst;
+    }
+
 }

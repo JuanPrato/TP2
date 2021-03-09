@@ -13,7 +13,7 @@ public class LevantarLapizTest {
     private SectorDibujo sectorDibujo = new SectorDibujo();
 
     @Test
-    void laInversaDeUnLapizLevantadoEsUnLapizAbajo(){
+    void laInversaDeLevantarLapizEsBajarLapiz(){
         IUsarLapiz esUnBajarLapiz = levantarLapiz.inversa();
         esUnBajarLapiz.usar(sectorDibujo);
         Personaje personaje = sectorDibujo.getPersonaje();

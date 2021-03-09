@@ -5,9 +5,13 @@ import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.direccion.Direccion;
 import edu.fiuba.algo3.modelo.Tablero;
 import edu.fiuba.algo3.modelo.linea.Linea;
+import javafx.scene.shape.Line;
+
+import java.util.List;
 
 public class SectorDibujo {
 
+    static private final SectorDibujo sectorDibujoIns = new SectorDibujo();
     private Tablero tablero = new Tablero();
     private Personaje personaje = new Personaje();
 
@@ -39,9 +43,13 @@ public class SectorDibujo {
         tablero.actualizar(linea);
     }
 
-    public void limpiarTablero(){
+    public void reiniciarTablero(){
         tablero = new Tablero();
-        personaje.setPosicion(new Posicion());
+        personaje = new Personaje();
+    }
+
+    static public SectorDibujo getInstance(){
+        return sectorDibujoIns;
     }
 
 }
